@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/400-italic.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/karla/400.css";
+@import "@fontsource/karla/500.css";
+@import "@fontsource/karla/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-display: "Cormorant Garamond", "Palatino Linotype", Palatino, serif;
+  --font-body: "Karla", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Douro / azulejo / port — cool paper, not cream */
+  --color-ink: #1c2428;
+  --color-muted: #4d5a61;
+  --color-paper: #f4f7f8;
+  --color-paper-deep: #e8eef1;
+  --color-blue: #0c5c7a;
+  --color-blue-deep: #08485f;
+  --color-burgundy: #6e1f2a;
+  --color-wine: #8a2a36;
+  --color-granite: #6b757a;
+  --color-line: #c5d0d6;
+  --color-route: #0a4d5a;
+  --color-route-halo: #eef3f4;
+  --color-gold: #9a7b4f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(
+      ellipse 120% 70% at 50% -10%,
+      color-mix(in srgb, var(--color-blue) 14%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fafb 0%,
+      var(--color-paper) 38%,
+      var(--color-paper-deep) 100%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%230c5c7a' stroke-opacity='0.045' stroke-width='1'/%3E%3Cpath d='M24 14 L34 24 L24 34 L14 24 Z' fill='none' stroke='%230c5c7a' stroke-opacity='0.035' stroke-width='1'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-shell {
+  min-height: 100dvh;
+}
+
+.meta-mono {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Classic Capela-das-Almas style diagonal tile band */
+.azulejo-band {
+  height: 10px;
+  background-color: var(--color-blue);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-blue) 0 7px,
+    #f4f7f8 7px 14px,
+    var(--color-blue-deep) 14px 21px,
+    #f4f7f8 21px 28px
+  );
+  border-top: 1px solid var(--color-blue-deep);
+  border-bottom: 1px solid var(--color-blue-deep);
+}
+
+.azulejo-corner {
+  width: 28px;
+  height: 28px;
+  background:
+    linear-gradient(var(--color-blue), var(--color-blue)) center / 100% 1px
+      no-repeat,
+    linear-gradient(var(--color-blue), var(--color-blue)) center / 1px 100%
+      no-repeat,
+    radial-gradient(
+      circle at center,
+      transparent 5px,
+      var(--color-blue) 5.5px,
+      var(--color-blue) 6.5px,
+      transparent 7px
+    );
+  opacity: 0.55;
+}
+
+.ticket-box {
+  border: 1px solid var(--color-blue);
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-blue) 8%, transparent),
+      transparent 18%
+    ),
+    color-mix(in srgb, white 72%, var(--color-paper));
+  box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--color-blue) 12%, transparent);
+}
+
+.btn-ink {
+  border: 1px solid var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-ink:hover {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.btn-ghost {
+  border: 1px solid var(--color-blue);
+  background: color-mix(in srgb, white 70%, transparent);
+  color: var(--color-blue);
+  transition: background 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--color-blue) 8%, white);
+}
+
+.panel-glass {
+  background: color-mix(in srgb, white 78%, var(--color-paper));
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(6px);
+}
+
+.map-frame {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--color-blue);
+  box-shadow:
+    inset 0 0 0 3px color-mix(in srgb, var(--color-blue) 10%, transparent),
+    0 1px 0 color-mix(in srgb, var(--color-blue) 15%, transparent);
+  background: #dce4e8;
+}
+
+.progress-track {
+  height: 3px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--color-line) 0 4px,
+      transparent 4px 8px
+    );
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-blue-deep),
+    var(--color-blue),
+    var(--color-wine)
+  );
+  transition: width 0.5s ease;
+}
+
+.stop-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  background: var(--color-blue);
+  color: white;
+  font-size: 15px;
+  line-height: 1;
+  border: 1px solid white;
+  box-shadow: 0 1px 4px rgb(12 92 122 / 28%);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.stop-marker span {
+  transform: rotate(-45deg);
+  display: block;
+  filter: grayscale(1) contrast(1.15);
+}
+
+.stop-icon {
+  filter: grayscale(1) contrast(1.15);
+}
+
+.stop-marker--active {
+  background: var(--color-burgundy);
+  transform: rotate(45deg) scale(1.12);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-burgundy) 22%, transparent);
+}
+
+.stop-marker--done {
+  background: var(--color-route);
+  opacity: 0.88;
+}
+
+.user-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 1px;
+  background: var(--color-burgundy);
+  border: 1px solid white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-burgundy) 20%, transparent);
+}
+
+.couple-walker {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+}
+
+.couple-walker__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 40px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgb(12 92 122 / 18%);
+  filter: blur(1px);
+}
+
+.couple-walker__portrait {
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f4f7f8;
+  outline: 1px solid var(--color-blue);
+  background: #dce4e8;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px rgb(12 92 122 / 22%);
+}
+
+.couple-walker--walking .couple-walker__portrait {
+  animation: couple-bob 0.55s ease-in-out infinite;
+}
+
+.couple-walker--walking .couple-walker__shadow {
+  animation: couple-shadow 0.55s ease-in-out infinite;
+}
+
+@keyframes couple-bob {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-2px);
+  }
+}
+
+@keyframes couple-shadow {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(0.9);
+    opacity: 0.1;
+  }
+}
+
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: color-mix(in srgb, var(--color-paper) 92%, white);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.nav-sticky--safe {
+  padding-top: env(safe-area-inset-top);
+}
+
+.tour-chrome {
+  z-index: 1100;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  background: color-mix(in srgb, white 78%, var(--color-paper));
+  backdrop-filter: blur(6px);
+}
+
+.leaflet-container {
+  font-family: var(--font-body);
+  background: #dce4e8;
+  z-index: 0 !important;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  background: rgb(244 247 248 / 88%) !important;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-river {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%230c5c7a' stroke-opacity='0.07' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+  animation: river-drift 28s linear infinite;
+}
+
+@keyframes river-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 48px 24px;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .hero-river,
+  .couple-walker--walking .couple-walker__portrait,
+  .couple-walker--walking .couple-walker__shadow {
+    animation: none;
+  }
+}
