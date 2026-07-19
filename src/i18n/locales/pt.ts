@@ -17,13 +17,13 @@ export const pt: Dictionary = {
     closing:
       "Dois dias, planos fixos — manhã, sesta, noite.",
     weekdayNote:
-      "Verificação de dias: Bolhão fechado ao domingo, Feira da Vandoma só aos sábados 8h–13h, Mercado Porto Belo só aos sábados, Lage Senhor do Padrão fechado à segunda e ao domingo. Reservem o Fogo; confirmem o horário do Mirajazz. Se um dos dias cair a domingo, reorganizem.",
+      "Verificação de dias: Bolhão fechado ao domingo, Mercado Porto Belo só aos sábados, Lage Senhor do Padrão fechado à segunda e ao domingo. Reservem o Fogo; confirmem o horário do Mirajazz. Se um dos dias cair a domingo, reorganizem.",
     signOff: "Bom porto.",
   },
   gate: {
-    overline: "Para os dois",
-    title: "Desde quando?",
-    prompt: "Introduzam a data desde que estão juntos.",
+    overline: "Para Miriam & Niels",
+    title: "Desde quando estão Miriam e Niels juntos?",
+    prompt: "Introduzam a data — depois abre o vosso plano do Porto.",
     day: "Dia",
     month: "Mês",
     year: "Ano",
@@ -215,12 +215,6 @@ export const pt: Dictionary = {
           tag: "Locais, não turistas",
           body: "De volta pelo tabuleiro inferior, e mesmo ao pé da ponte no lado do Porto: o quiosque do clube de futebol Guindalense. A cerveja mais barata da cidade, a melhor vista, só locais — uma paragem curta antes do caminho para casa. Depois 15–20 min até ao apartamento. Sesta.",
           meta: "No caminho de volta pela ponte",
-        },
-        "m2-vandoma": {
-          title: "Se for sábado: Feira da Vandoma",
-          tag: "Flair de antiquário",
-          body: "A feira de velharias do Porto — livros antigos, moedas, o tipo de stock que um antiquário de romance policial venderia. Só aos sábados, 8h–13h, um pouco fora de mão (metro via Campanhã). Se o dia cair a sábado, ponham no início e adiém a prova.",
-          meta: "Sábados 8h–13h",
         },
       },
     },

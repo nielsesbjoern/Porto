@@ -228,13 +228,6 @@ export const sectionsBase: SectionBase[] = [
         lng: -8.60955,
         mapsQuery: "Guindalense Futebol Clube, Porto",
       },
-      {
-        id: "m2-vandoma",
-        icon: "🏷️",
-        lat: 41.1482,
-        lng: -8.5785,
-        mapsQuery: "Feira da Vandoma, Porto",
-      },
     ],
   },
   {

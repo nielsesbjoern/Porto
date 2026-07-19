@@ -17,13 +17,13 @@ export const de: Dictionary = {
     closing:
       "Zwei Tage, feste Pläne — Vormittag, Siesta, Abend.",
     weekdayNote:
-      "Wochentags-Check: Bolhão sonntags zu, Feira da Vandoma nur samstags 8–13 Uhr, Mercado Porto Belo nur samstags, Lage Senhor do Padrão montags und sonntags zu. Fogo reservieren; Mirajazz-Zeiten checken. Falls ein Tag auf Sonntag fällt: umplanen.",
+      "Wochentags-Check: Bolhão sonntags zu, Mercado Porto Belo nur samstags, Lage Senhor do Padrão montags und sonntags zu. Fogo reservieren; Mirajazz-Zeiten checken. Falls ein Tag auf Sonntag fällt: umplanen.",
     signOff: "Bom porto.",
   },
   gate: {
-    overline: "Für euch zwei",
-    title: "Seit wann?",
-    prompt: "Gebt das Datum ein, seit dem ihr zusammen seid.",
+    overline: "Für Miriam & Niels",
+    title: "Seit wann sind Miriam und Niels zusammen?",
+    prompt: "Gebt das Datum ein — dann öffnet sich euer Porto-Plan.",
     day: "Tag",
     month: "Monat",
     year: "Jahr",
@@ -215,12 +215,6 @@ export const de: Dictionary = {
           tag: "Locals, keine Touristen",
           body: "Zurück über das untere Deck, und direkt am Brückenfuß auf der Porto-Seite: der Kiosk des Fußballclubs Guindalense. Billigstes Bier der Stadt, beste Aussicht, nur Locals — kurzer Stop vor dem Heimweg. Dann 15–20 Min. zur Wohnung. Siesta.",
           meta: "Auf dem Rückweg über die Brücke",
-        },
-        "m2-vandoma": {
-          title: "Falls Samstag: Feira da Vandoma",
-          tag: "Antiquarisches Flair",
-          body: "Portos Flohmarkt — alte Bücher, Münzen, das Sortiment, das ein Krimi-Antiquar verkaufen würde. Nur samstags, 8–13 Uhr, etwas abseits (Metro über Campanhã). Falls euer Tag darauf fällt: an den Anfang und die Verkostung später.",
-          meta: "Samstags 8–13 Uhr",
         },
       },
     },

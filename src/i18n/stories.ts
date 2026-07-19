@@ -37,8 +37,6 @@ export const stories: Record<Locale, Record<string, string>> = {
       "Cais de Gaia used to be barrels and rabelo boats. Today the same quay holds restaurants facing the Ribeira skyline — a view merchants once measured in shipments, now measured in lunch. Sushi with that backdrop is a modern Porto joke that somehow works.",
     "m2-guindalense":
       "Guindalense is a neighbourhood football club whose kiosk under the bridge became a local legend: cheap beer, river wind, zero polish. It sits where Porto's working waterfront meets the postcard — the best seat in the city if you don't need a menu in four languages.",
-    "m2-vandoma":
-      "Feira da Vandoma is Porto's long-running flea market — coins, stamps, broken clocks, books with someone else's notes. It feels like the city's attic emptied onto tables every Saturday, the opposite of the curated antique shops downtown.",
     "e2-metro":
       "Norte Shopping sits on the metro line that stitches Porto's granite centre to the northern suburbs — a shopping mall as transfer point, not a destination. From Bolhão it's a short ride that locals use for errands; tonight it's the cleanest path to Brazilian fire.",
     "e2-fogo":
@@ -83,8 +81,6 @@ export const stories: Record<Locale, Record<string, string>> = {
       "Der Cais de Gaia war Fässer und Rabelo-Boote. Heute stehen Restaurants mit Blick auf die Ribeira — früher in Schiffsladungen gemessen, heute in Mittagessen. Sushi vor dieser Kulisse ist ein moderner Porto-Witz, der funktioniert.",
     "m2-guindalense":
       "Guindalense ist ein Viertelverein, dessen Kiosk unter der Brücke Legende wurde: billiges Bier, Flusswind, null Politur. Bester Platz der Stadt, wenn du keine Speisekarte in vier Sprachen brauchst.",
-    "m2-vandoma":
-      "Die Feira da Vandoma ist Portos Flohmarkt seit Langem — Münzen, Uhren, Bücher mit fremden Notizen. Jeden Samstag der Dachboden der Stadt auf Tischen, das Gegenteil der kuratierten Antiquitäten downtown.",
     "e2-metro":
       "Das Norte Shopping sitzt an der Metro, die Portos Granitzentrum an die nördlichen Vororte bindet — Einkaufszentrum als Umstieg, nicht als Ziel. Vom Bolhão ist es eine kurze Fahrt; heute der sauberste Weg zum brasilianischen Grill.",
     "e2-fogo":
@@ -129,8 +125,6 @@ export const stories: Record<Locale, Record<string, string>> = {
       "O Cais de Gaia foram pipas e rabelos. Hoje o mesmo cais tem restaurantes de frente para a Ribeira — vista que antes se media em cargas e agora se mede em almoços. Sushi com esse cenário é uma piada moderna do Porto que resulta.",
     "m2-guindalense":
       "O Guindalense é um clube de bairro cujo quiosque debaixo da ponte virou lenda: cerveja barata, vento do rio, zero verniz. O melhor lugar da cidade se não precisarem de ementa em quatro línguas.",
-    "m2-vandoma":
-      "A Feira da Vandoma é a feira da ladra do Porto — moedas, relógios, livros com notas de outra gente. Todos os sábados o sótão da cidade em cima de mesas, o contrário das lojas de antiguidades do centro.",
     "e2-metro":
       "O Norte Shopping assenta na linha de metro que liga o granito do centro aos subúrbios a norte — centro comercial como transferência, não destino. Do Bolhão é um salto curto; esta noite é o caminho limpo até ao fogo brasileiro.",
     "e2-fogo":
