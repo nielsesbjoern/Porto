@@ -20,6 +20,16 @@ export const de: Dictionary = {
       "Wochentags-Check: Bolhão sonntags zu, Feira da Vandoma nur samstags 8–13 Uhr, Mercado Porto Belo nur samstags, Lage Senhor do Padrão montags und sonntags zu. Fogo reservieren; Mirajazz-Zeiten checken. Falls ein Tag auf Sonntag fällt: umplanen.",
     signOff: "Bom porto.",
   },
+  gate: {
+    overline: "Für euch zwei",
+    title: "Seit wann?",
+    prompt: "Gebt das Datum ein, seit dem ihr zusammen seid.",
+    day: "Tag",
+    month: "Monat",
+    year: "Jahr",
+    submit: "Eintreten →",
+    error: "Das stimmt nicht — noch einmal versuchen.",
+  },
   ui: {
     endTour: "Tour beenden",
     backHome: "← Zur Hauptseite",

@@ -19,6 +19,16 @@ export const en: Dictionary = {
       "Weekday check: Bolhão closed Sundays, Feira da Vandoma only Saturdays 8am–1pm, Mercado Porto Belo only Saturdays, Lage Senhor do Padrão closed Mondays and Sundays. Book Fogo; check Mirajazz hours. If one of your days lands on a Sunday, reshuffle.",
     signOff: "Bom porto.",
   },
+  gate: {
+    overline: "For the two of you",
+    title: "Since when?",
+    prompt: "Enter the date you’ve been together since.",
+    day: "Day",
+    month: "Month",
+    year: "Year",
+    submit: "Enter →",
+    error: "That’s not it — try again.",
+  },
   ui: {
     endTour: "End tour",
     backHome: "← Back to home",

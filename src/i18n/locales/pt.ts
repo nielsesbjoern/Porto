@@ -20,6 +20,16 @@ export const pt: Dictionary = {
       "Verificação de dias: Bolhão fechado ao domingo, Feira da Vandoma só aos sábados 8h–13h, Mercado Porto Belo só aos sábados, Lage Senhor do Padrão fechado à segunda e ao domingo. Reservem o Fogo; confirmem o horário do Mirajazz. Se um dos dias cair a domingo, reorganizem.",
     signOff: "Bom porto.",
   },
+  gate: {
+    overline: "Para os dois",
+    title: "Desde quando?",
+    prompt: "Introduzam a data desde que estão juntos.",
+    day: "Dia",
+    month: "Mês",
+    year: "Ano",
+    submit: "Entrar →",
+    error: "Não é isso — tentem outra vez.",
+  },
   ui: {
     endTour: "Terminar tour",
     backHome: "← Voltar ao início",

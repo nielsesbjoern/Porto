@@ -33,6 +33,16 @@ export interface Dictionary {
     weekdayNote: string;
     signOff: string;
   };
+  gate: {
+    overline: string;
+    title: string;
+    prompt: string;
+    day: string;
+    month: string;
+    year: string;
+    submit: string;
+    error: string;
+  };
   ui: {
     endTour: string;
     backHome: string;
