@@ -37,6 +37,15 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html.map-touch-lock,
+html.map-touch-lock body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 body {
@@ -47,6 +56,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: contain;
   background-color: var(--color-paper);
   background-image:
     radial-gradient(
@@ -61,7 +71,13 @@ body {
       var(--color-paper-deep) 100%
     ),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 2 L46 24 L24 46 L2 24 Z' fill='none' stroke='%230c5c7a' stroke-opacity='0.045' stroke-width='1'/%3E%3Cpath d='M24 14 L34 24 L24 34 L14 24 Z' fill='none' stroke='%230c5c7a' stroke-opacity='0.035' stroke-width='1'/%3E%3C/svg%3E");
-  background-attachment: fixed;
+}
+
+/* Fixed backgrounds jank hard on iOS Safari — desktop only */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 #root {
@@ -322,10 +338,6 @@ a {
   border-bottom: 1px solid var(--color-line);
 }
 
-.nav-sticky--safe {
-  padding-top: env(safe-area-inset-top);
-}
-
 .tour-chrome {
   z-index: 1100;
   padding-top: max(0.75rem, env(safe-area-inset-top));
@@ -333,15 +345,64 @@ a {
   backdrop-filter: blur(6px);
 }
 
+/* Room for OfflineBar + home indicator on iPhone */
+.pb-safe-bar {
+  padding-bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.footer-avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-line);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-blue) 12%, transparent);
+}
+
 .leaflet-container {
   font-family: var(--font-body);
   background: #dce4e8;
   z-index: 0 !important;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.leaflet-control-zoom {
+  margin-top: 12px !important;
+  margin-right: 10px !important;
+  border: 1px solid var(--color-blue) !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+
+.leaflet-control-zoom a {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  color: var(--color-blue) !important;
+  background: color-mix(in srgb, white 88%, var(--color-paper)) !important;
 }
 
 .leaflet-control-attribution {
   font-size: 9px !important;
   background: rgb(244 247 248 / 88%) !important;
+  max-width: 55%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .couple-walker {
+    width: 56px;
+    height: 56px;
+  }
+
+  .couple-walker__portrait {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 @keyframes fade-up {

@@ -1,10 +1,11 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { MapContainer, Marker, Polyline, ZoomControl } from "react-leaflet";
 import type { Stop } from "../data/itinerary";
 import { useI18n } from "../i18n";
 import { buildTourDirectionLegs } from "../utils/maps";
+import { warmMapTiles } from "../utils/warmMapTiles";
 import { CoupleWalker } from "./CoupleWalker";
-import { MapController, ScrollWheelZoomHandler } from "./MapController";
+import { MapController, MapInteractionHandler } from "./MapController";
 import { MinimalBasemap } from "./MinimalBasemap";
 import { createUserIcon, useStopIcons } from "./StopMarker";
 
@@ -43,6 +44,10 @@ export default function TourMap({
   const icons = useStopIcons(stops, activeStopId, doneIds);
   const userIcon = useMemo(() => createUserIcon(), []);
 
+  useEffect(() => {
+    void warmMapTiles();
+  }, []);
+
   const polyline = useMemo(
     () => stops.map((s) => [s.lat, s.lng] as [number, number]),
     [stops],
@@ -77,7 +82,11 @@ export default function TourMap({
         setGeoError(err.code === 1 ? t.ui.geoDenied : t.ui.geoFailed);
         setLocating(false);
       },
-      { enableHighAccuracy: true, timeout: 10000 },
+      {
+        enableHighAccuracy: true,
+        timeout: 15000,
+        maximumAge: 20_000,
+      },
     );
   }, [t.ui]);
 
@@ -86,13 +95,16 @@ export default function TourMap({
       <MapContainer
         center={center}
         zoom={14}
-        className="h-full w-full"
+        className="h-full w-full touch-none"
         zoomControl={false}
         attributionControl
+        // Prefer touch gestures on phones; avoid double-tap zoom fight with markers
+        doubleClickZoom={false}
+        bounceAtZoomLimits={false}
       >
         <MinimalBasemap />
-        <ZoomControl position="bottomright" />
-        <ScrollWheelZoomHandler />
+        <ZoomControl position="topright" />
+        <MapInteractionHandler />
         <MapController stops={stops} flyToStop={flyToStop} fitKey={fitKey} />
 
         {showRoute && polyline.length > 1 && (
@@ -141,12 +153,12 @@ export default function TourMap({
         )}
       </MapContainer>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] flex flex-col gap-2 p-3">
-        <div className="pointer-events-auto flex flex-wrap gap-2">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[500] flex flex-col gap-2 p-2.5 sm:p-3">
+        <div className="pointer-events-auto flex max-w-full flex-wrap gap-2">
           <button
             type="button"
             onClick={locate}
-            className="btn-ghost meta-mono px-3 py-2 shadow-none"
+            className="btn-ghost meta-mono min-h-11 px-3.5 py-2.5 shadow-none"
           >
             {locating ? t.ui.locating : t.ui.myLocation}
           </button>
@@ -156,14 +168,14 @@ export default function TourMap({
               href={leg.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ghost meta-mono px-3 py-2 shadow-none"
+              className="btn-ghost meta-mono min-h-11 px-3.5 py-2.5 shadow-none"
             >
               {leg.label}
             </a>
           ))}
         </div>
         {geoError && (
-          <p className="meta-mono rounded bg-white/95 px-2 py-1 text-[color:var(--color-burgundy)]">
+          <p className="meta-mono rounded bg-white/95 px-2 py-1.5 text-[color:var(--color-burgundy)]">
             {geoError}
           </p>
         )}

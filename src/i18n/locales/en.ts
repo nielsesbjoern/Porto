@@ -13,7 +13,7 @@ export const en: Dictionary = {
       "No themes, just geography. Each morning is a single loop from the flat that ends at lunch — then nap. Each evening is its own fixed plan too, so you always know where you're headed.",
     baseLabel:
       "BASE · Rua do Dr. Ricardo Jorge 96 — 5 min walk from Bolhão",
-    startCta: "Open Day 1 →",
+    startCta: "Open Monday →",
     closing: "Two days, fixed plans — morning, nap, evening.",
     weekdayNote:
       "Weekday check: Bolhão closed Sundays, Feira da Vandoma only Saturdays 8am–1pm, Mercado Porto Belo only Saturdays, Lage Senhor do Padrão closed Mondays and Sundays. Book Fogo; check Mirajazz hours. If one of your days lands on a Sunday, reshuffle.",
@@ -32,8 +32,8 @@ export const en: Dictionary = {
     backToList: "← Back to list",
     stopOf: "Stop {current} of {total}",
     done: "done",
-    openMaps: "Open in Google Maps",
-    openMapsShort: "Open Maps",
+    openMaps: "Open in Maps",
+    openMapsShort: "Maps",
     walkingRoute: "Walking route",
     doneNext: "Done → next",
     markDone: "Mark done",
@@ -45,7 +45,7 @@ export const en: Dictionary = {
     geoUnsupported: "Geolocation not supported",
     geoDenied: "Location denied",
     geoFailed: "Location failed",
-    tourInMaps: "Tour in Google Maps",
+    tourInMaps: "Tour in Maps",
     tourInMapsShort: "Tour → Maps",
     completeTour: "Complete tour ({count} stops)",
     completeTourShort: "All ({count})",
@@ -53,24 +53,32 @@ export const en: Dictionary = {
     stageShort: "Stage {index}",
     langLabel: "Language",
     storyLabel: "The story",
+    offlineMode: "Offline · itinerary & cached map ready",
+    offlineInstalling: "Preparing offline mode…",
+    offlinePrepare: "Save for offline (map + pages)",
+    offlinePreparing: "Saving for offline…",
+    offlineReady: "Saved for offline ✓",
+    iosAddHome:
+      "Add to Home Screen: Share → “Add to Home Screen” — then Porto works like an app, even offline.",
+    iosAddHomeDismiss: "Got it",
   },
   days: {
     "1": {
-      navLabel: "Day 1",
-      title: "Day 1 — Old Town & Matosinhos",
+      navLabel: "Monday",
+      title: "Monday — Old Town & Matosinhos",
       blurb:
         "Morning: one loop through the old town ending at lunch. Evening: beach and fish in Matosinhos.",
     },
     "2": {
-      navLabel: "Day 2",
-      title: "Day 2 — Gaia & rodízio",
+      navLabel: "Tuesday",
+      title: "Tuesday — Gaia & rodízio",
       blurb:
         "Morning: Bolhão, the bridge and port wine in Gaia. Evening: Fogo de Chão, Virtudes, Mirajazz.",
     },
   },
   sections: {
     morning1: {
-      navLabel: "Morning 1",
+      navLabel: "Morning",
       title: "Morning — Old Town Core",
       intro:
         "One line, no backtracking: down through Santa Catarina from the flat, past the Sé and hidden viewpoints to the river, through the gilded church, and up Rua das Flores to Lello. Ends at lunch.",
@@ -114,7 +122,7 @@ export const en: Dictionary = {
           meta: "Flores starts at the riverfront, Lello is 6 min further",
         },
         "m1-lunch": {
-          title: "Lunch — then off duty",
+          title: "Lunch",
           tag: "Jardim do Trás",
           body: "Three minutes from Lello, hidden down an alley on Rua de Trás 224 — tiny place run by two people who actually care. Octopus carpaccio, tiger shrimp risotto, Argentine steak, every plate feels thought out. Real restaurant, not a snack counter. Closed Tuesdays. If Tuesday is your day: The Door (Rua das Taipas, nearby, 4.8 stars, small fusion menu) or Cozinha dos Lóios (Rua dos Caldeireiros, mid-route, octopus and meat, always open). On the way back, pastéis de nata at Manteigaria. Then 15 min home. Nap.",
           meta: "Craft, not casual",
@@ -122,8 +130,8 @@ export const en: Dictionary = {
       },
     },
     evening1: {
-      navLabel: "Evening 1",
-      title: "Evening 1 — Matosinhos: Beach & Fish",
+      navLabel: "Evening",
+      title: "Evening — Matosinhos: Beach & Fish",
       intro:
         "A fixed plan for tonight, not a menu of options — you're freshest on evening one, so this is the night for the extra trip out to the coast.",
       tip: "GO EARLY — BEFORE THE LAGE SENHOR DO PADRÃO QUEUE FORMS · CLOSED MON & SUN",
@@ -155,7 +163,7 @@ export const en: Dictionary = {
       },
     },
     morning2: {
-      navLabel: "Morning 2",
+      navLabel: "Morning",
       title: "Morning — River & Gaia",
       intro:
         "Market right outside your door, then over the bridge: the view from above first, the wine from below second. Lunch at the water in Gaia before heading home.",
@@ -186,7 +194,7 @@ export const en: Dictionary = {
           meta: "Cable car 5 min or 10 min walk downhill",
         },
         "m2-lunch": {
-          title: "Lunch — then off duty",
+          title: "Lunch",
           tag: "Dragon Palace",
           body: "Right on the Cais de Gaia, a few minutes from the lodges — all-you-can-eat sushi with one of the best views in the city, straight across at the Ribeira. Good food, but arrive early or expect a line; ordering is via tablet at the table.",
           meta: "3 min from the lodges, on the Gaia waterfront · Great view, real food",
@@ -206,8 +214,8 @@ export const en: Dictionary = {
       },
     },
     evening2: {
-      navLabel: "Evening 2",
-      title: "Evening 2 — Rodízio & jazz on the Douro",
+      navLabel: "Evening",
+      title: "Evening — Rodízio & jazz on the Douro",
       intro:
         "A fixed plan: Brazilian rodízio at Fogo de Chão (Norte Shopping), back toward the flat, a short Douro pause at Passeio das Virtudes, then Mirajazz rooftop to close.",
       tip: "BOOK FOGO · QUICK-CHECK MIRAJAZZ LIVE SET",

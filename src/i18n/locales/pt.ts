@@ -13,7 +13,7 @@ export const pt: Dictionary = {
       "Sem temas, só geografia. Cada manhã é um único circuito a partir do apartamento que termina no almoço — depois sesta. Cada noite também tem um plano fixo, para saberem sempre para onde vão.",
     baseLabel:
       "BASE · Rua do Dr. Ricardo Jorge 96 — 5 min a pé do Bolhão",
-    startCta: "Abrir Dia 1 →",
+    startCta: "Abrir Segunda →",
     closing:
       "Dois dias, planos fixos — manhã, sesta, noite.",
     weekdayNote:
@@ -33,7 +33,7 @@ export const pt: Dictionary = {
     backToList: "← Voltar à lista",
     stopOf: "Paragem {current} de {total}",
     done: "feito",
-    openMaps: "Abrir no Google Maps",
+    openMaps: "Abrir no Maps",
     openMapsShort: "Abrir Maps",
     walkingRoute: "Rota a pé",
     doneNext: "Feito → seguinte",
@@ -46,7 +46,7 @@ export const pt: Dictionary = {
     geoUnsupported: "Geolocalização não suportada",
     geoDenied: "Localização recusada",
     geoFailed: "Localização falhou",
-    tourInMaps: "Tour no Google Maps",
+    tourInMaps: "Tour no Maps",
     tourInMapsShort: "Tour → Maps",
     completeTour: "Tour completa ({count} paragens)",
     completeTourShort: "Tudo ({count})",
@@ -54,24 +54,32 @@ export const pt: Dictionary = {
     stageShort: "Etapa {index}",
     langLabel: "Idioma",
     storyLabel: "A história",
+    offlineMode: "Offline · roteiro e mapa em cache prontos",
+    offlineInstalling: "A preparar modo offline…",
+    offlinePrepare: "Guardar para offline (mapa + páginas)",
+    offlinePreparing: "A guardar para offline…",
+    offlineReady: "Guardado para offline ✓",
+    iosAddHome:
+      "Adicionar ao ecrã principal: Partilhar → “Adicionar ao ecrã principal” — depois o Porto funciona como uma app, também offline.",
+    iosAddHomeDismiss: "Percebido",
   },
   days: {
     "1": {
-      navLabel: "Dia 1",
-      title: "Dia 1 — Centro histórico & Matosinhos",
+      navLabel: "Segunda",
+      title: "Segunda — Centro histórico & Matosinhos",
       blurb:
         "Manhã: um circuito pelo centro até ao almoço. Noite: praia e peixe em Matosinhos.",
     },
     "2": {
-      navLabel: "Dia 2",
-      title: "Dia 2 — Gaia & rodízio",
+      navLabel: "Terça",
+      title: "Terça — Gaia & rodízio",
       blurb:
         "Manhã: Bolhão, ponte e vinho do Porto em Gaia. Noite: Fogo de Chão, Virtudes, Mirajazz.",
     },
   },
   sections: {
     morning1: {
-      navLabel: "Manhã 1",
+      navLabel: "Manhã",
       title: "Manhã — Centro histórico",
       intro:
         "Uma linha, sem voltar atrás: descer a Santa Catarina a partir do apartamento, passar pela Sé e miradouros escondidos até ao rio, pela igreja dourada e subir a Rua das Flores até à Lello. Termina no almoço.",
@@ -115,7 +123,7 @@ export const pt: Dictionary = {
           meta: "Flores começa na Ribeira, a Lello fica a 6 min",
         },
         "m1-lunch": {
-          title: "Almoço — depois descanso",
+          title: "Almoço",
           tag: "Jardim do Trás",
           body: "Três minutos da Lello, escondido numa travessa na Rua de Trás 224 — sítio pequenino gerido por duas pessoas que se importam de verdade. Carpaccio de polvo, risotto de camarão tigre, bife argentino, cada prato pensado. Restaurante a sério, não snack. Fecha à terça. Se for terça: The Door (Rua das Taipas, perto, 4,8 estrelas, menu fusion pequeno) ou Cozinha dos Lóios (Rua dos Caldeireiros, a meio do percurso, polvo e carne, sempre aberto). No regresso, pastéis de nata na Manteigaria. Depois 15 min até casa. Sesta.",
           meta: "Artesanal, não casual",
@@ -123,8 +131,8 @@ export const pt: Dictionary = {
       },
     },
     evening1: {
-      navLabel: "Noite 1",
-      title: "Noite 1 — Matosinhos: Praia & Peixe",
+      navLabel: "Noite",
+      title: "Noite — Matosinhos: Praia & Peixe",
       intro:
         "Um plano fixo para esta noite, não um menu de opções — na primeira noite estão mais frescos, por isso é a noite da viagem extra até à costa.",
       tip: "SAIAM CEDO — ANTES DE FORMAR FILA NO LAGE SENHOR DO PADRÃO · FECHADO SEG & DOM",
@@ -156,7 +164,7 @@ export const pt: Dictionary = {
       },
     },
     morning2: {
-      navLabel: "Manhã 2",
+      navLabel: "Manhã",
       title: "Manhã — Rio & Gaia",
       intro:
         "Mercado à porta, depois a ponte: primeiro a vista de cima, depois o vinho de baixo. Almoço à beira-água em Gaia antes de voltar a casa.",
@@ -187,7 +195,7 @@ export const pt: Dictionary = {
           meta: "Teleférico 5 min ou 10 min a pé a descer",
         },
         "m2-lunch": {
-          title: "Almoço — depois descanso",
+          title: "Almoço",
           tag: "Dragon Palace",
           body: "Mesmo no Cais de Gaia, a poucos minutos das caves — sushi all-you-can-eat com uma das melhores vistas da cidade, em frente à Ribeira. Boa comida, mas cheguem cedo ou esperem fila; pedem no tablet à mesa.",
           meta: "3 min das caves, na margem de Gaia · Grande vista, comida a sério",
@@ -207,8 +215,8 @@ export const pt: Dictionary = {
       },
     },
     evening2: {
-      navLabel: "Noite 2",
-      title: "Noite 2 — Rodízio & jazz no Douro",
+      navLabel: "Noite",
+      title: "Noite — Rodízio & jazz no Douro",
       intro:
         "Plano fixo: rodízio brasileiro no Fogo de Chão (Norte Shopping), regresso em direção ao apartamento, uma pausa curta no Passeio das Virtudes, e fechar no rooftop do Mirajazz.",
       tip: "RESERVEM O FOGO · CONFIRMEM O LIVE DO MIRAJAZZ",

@@ -67,6 +67,13 @@ export interface Dictionary {
     openMapsShort: string;
     langLabel: string;
     storyLabel: string;
+    offlineMode: string;
+    offlineInstalling: string;
+    offlinePrepare: string;
+    offlinePreparing: string;
+    offlineReady: string;
+    iosAddHome: string;
+    iosAddHomeDismiss: string;
   };
   days: Record<
     "1" | "2",

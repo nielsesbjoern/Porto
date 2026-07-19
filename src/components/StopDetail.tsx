@@ -30,7 +30,7 @@ export function StopDetail({
       <button
         type="button"
         onClick={onBack}
-        className="meta-mono text-[color:var(--color-blue)] transition hover:underline"
+        className="meta-mono inline-flex min-h-11 items-center text-[color:var(--color-blue)] transition hover:underline"
       >
         {t.ui.backToList}
       </button>
@@ -78,7 +78,7 @@ export function StopDetail({
           href={stopMapsUrl(stop)}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-ghost meta-mono px-3 py-2.5"
+          className="btn-ghost meta-mono inline-flex min-h-11 items-center px-3.5 py-2.5"
         >
           {t.ui.openMaps}
         </a>
@@ -86,7 +86,7 @@ export function StopDetail({
           href={stopDirectionsUrl(stop)}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-ghost meta-mono px-3 py-2.5"
+          className="btn-ghost meta-mono inline-flex min-h-11 items-center px-3.5 py-2.5"
         >
           {t.ui.walkingRoute}
         </a>
@@ -97,7 +97,7 @@ export function StopDetail({
           <button
             type="button"
             onClick={onDone}
-            className="btn-ink meta-mono flex-1 px-4 py-3"
+            className="btn-ink meta-mono min-h-12 flex-1 px-4 py-3"
           >
             {hasNext ? t.ui.doneNext : t.ui.markDone}
           </button>
@@ -106,7 +106,7 @@ export function StopDetail({
             <button
               type="button"
               onClick={onDone}
-              className="meta-mono flex-1 border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-muted)]"
+              className="meta-mono min-h-12 flex-1 border border-[color:var(--color-line)] px-4 py-3 text-[color:var(--color-muted)]"
             >
               {t.ui.undoDone}
             </button>
@@ -114,7 +114,7 @@ export function StopDetail({
               <button
                 type="button"
                 onClick={onNext}
-                className="btn-ink meta-mono flex-1 px-4 py-3"
+                className="btn-ink meta-mono min-h-12 flex-1 px-4 py-3"
               >
                 {t.ui.nextStop}
               </button>

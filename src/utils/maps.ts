@@ -1,4 +1,5 @@
 import type { Stop } from "../data/itinerary";
+import { isAppleTouchDevice } from "./device";
 
 export const GOOGLE_MAPS_MAX_STOPS = 25;
 export const GOOGLE_MAPS_RELIABLE_STOPS = 10;
@@ -20,12 +21,32 @@ export function googleMapsDirectionsUrl(lat: number, lng: number): string {
   return `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&travelmode=walking`;
 }
 
+function appleMapsPlaceUrl(query: string): string {
+  return `https://maps.apple.com/?q=${encodeURIComponent(query)}`;
+}
+
+function appleMapsCoordsUrl(lat: number, lng: number): string {
+  return `https://maps.apple.com/?ll=${lat},${lng}&q=${lat},${lng}`;
+}
+
+function appleMapsWalkUrl(queryOrCoords: string): string {
+  return `https://maps.apple.com/?daddr=${encodeURIComponent(queryOrCoords)}&dirflg=w`;
+}
+
 export function stopMapsUrl(stop: Stop): string {
+  if (isAppleTouchDevice()) {
+    if (stop.mapsQuery) return appleMapsPlaceUrl(stop.mapsQuery);
+    return appleMapsCoordsUrl(stop.lat, stop.lng);
+  }
   if (stop.mapsQuery) return googleMapsQueryUrl(stop.mapsQuery);
   return googleMapsSearchUrl(stop.lat, stop.lng);
 }
 
 export function stopDirectionsUrl(stop: Stop): string {
+  if (isAppleTouchDevice()) {
+    if (stop.mapsQuery) return appleMapsWalkUrl(stop.mapsQuery);
+    return appleMapsWalkUrl(`${stop.lat},${stop.lng}`);
+  }
   if (stop.mapsQuery) {
     return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(stop.mapsQuery)}&travelmode=walking`;
   }
@@ -62,6 +83,7 @@ export function buildWalkingDirectionsUrl(routeStops: Stop[]): string {
   if (routeStops.length > GOOGLE_MAPS_MAX_STOPS) {
     return buildWalkingDirectionsUrl(routeStops.slice(0, GOOGLE_MAPS_MAX_STOPS));
   }
+  // Multi-stop tours: Google Maps (Apple Maps has no reliable multi-waypoint walk)
   if (routeStops.length === 1) {
     return stopDirectionsUrl(routeStops[0]);
   }

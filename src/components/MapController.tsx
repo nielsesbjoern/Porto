@@ -20,7 +20,7 @@ export function MapController({ stops, flyToStop, fitKey }: MapControllerProps) 
     if (stops.length === 0) return;
     const bounds = latLngBounds(stops.map((s) => [s.lat, s.lng]));
     map.fitBounds(bounds, {
-      padding: [36, 36],
+      padding: [40, 40],
       maxZoom: 15,
       animate: !prefersReducedMotion(),
     });
@@ -36,14 +36,69 @@ export function MapController({ stops, flyToStop, fitKey }: MapControllerProps) 
   return null;
 }
 
-export function ScrollWheelZoomHandler() {
+/**
+ * Desktop: zoom only while map is focused.
+ * Touch (iPhone): keep pinch-zoom on; lock page scroll while dragging the map.
+ */
+export function MapInteractionHandler() {
   const map = useMap();
 
   useEffect(() => {
     const container = map.getContainer();
     container.setAttribute("tabindex", "0");
-    map.scrollWheelZoom.disable();
 
+    const coarse =
+      typeof window !== "undefined" &&
+      window.matchMedia("(pointer: coarse)").matches;
+
+    // iOS Safari often lays out the map before the flex height settles
+    const invalidate = () => {
+      map.invalidateSize({ animate: false });
+    };
+    invalidate();
+    const t1 = window.setTimeout(invalidate, 120);
+    const t2 = window.setTimeout(invalidate, 450);
+    window.addEventListener("orientationchange", invalidate);
+    window.addEventListener("resize", invalidate);
+    const vv = window.visualViewport;
+    vv?.addEventListener("resize", invalidate);
+
+    if (coarse) {
+      map.scrollWheelZoom.disable();
+      map.touchZoom.enable();
+      map.dragging.enable();
+
+      const lockScroll = () => {
+        document.documentElement.classList.add("map-touch-lock");
+      };
+      const unlockScroll = () => {
+        document.documentElement.classList.remove("map-touch-lock");
+      };
+
+      map.on("dragstart", lockScroll);
+      map.on("zoomstart", lockScroll);
+      map.on("dragend", unlockScroll);
+      map.on("zoomend", unlockScroll);
+      container.addEventListener("touchend", unlockScroll);
+      container.addEventListener("touchcancel", unlockScroll);
+
+      return () => {
+        window.clearTimeout(t1);
+        window.clearTimeout(t2);
+        window.removeEventListener("orientationchange", invalidate);
+        window.removeEventListener("resize", invalidate);
+        vv?.removeEventListener("resize", invalidate);
+        map.off("dragstart", lockScroll);
+        map.off("zoomstart", lockScroll);
+        map.off("dragend", unlockScroll);
+        map.off("zoomend", unlockScroll);
+        container.removeEventListener("touchend", unlockScroll);
+        container.removeEventListener("touchcancel", unlockScroll);
+        unlockScroll();
+      };
+    }
+
+    map.scrollWheelZoom.disable();
     const enable = () => map.scrollWheelZoom.enable();
     const disable = () => map.scrollWheelZoom.disable();
     const focus = () => container.focus();
@@ -58,6 +113,11 @@ export function ScrollWheelZoomHandler() {
     window.addEventListener("pointerdown", onPointerDown);
 
     return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.removeEventListener("orientationchange", invalidate);
+      window.removeEventListener("resize", invalidate);
+      vv?.removeEventListener("resize", invalidate);
       map.off("focus", enable);
       map.off("blur", disable);
       container.removeEventListener("click", focus);
@@ -68,3 +128,6 @@ export function ScrollWheelZoomHandler() {
 
   return null;
 }
+
+/** @deprecated use MapInteractionHandler */
+export const ScrollWheelZoomHandler = MapInteractionHandler;

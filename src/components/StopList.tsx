@@ -25,7 +25,7 @@ export function StopList({
             <button
               type="button"
               onClick={() => onSelect(stop)}
-              className={`flex w-full gap-4 px-1 py-4 text-left transition hover:bg-black/[0.02] ${
+              className={`flex w-full gap-4 px-1 py-4 text-left transition active:bg-black/[0.04] hover:bg-black/[0.02] ${
                 active ? "bg-black/[0.03]" : ""
               }`}
             >

@@ -25,7 +25,7 @@ export function LangSwitch() {
           <button
             type="button"
             onClick={() => setLocale(opt.id)}
-            className={`meta-mono px-1 py-0.5 transition ${
+            className={`meta-mono min-h-11 min-w-11 px-2 py-2 transition ${
               locale === opt.id
                 ? "text-[color:var(--color-burgundy)]"
                 : "text-[color:var(--color-muted)] hover:text-[color:var(--color-blue)]"
