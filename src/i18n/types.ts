@@ -38,7 +38,9 @@ export interface Dictionary {
     title: string;
     prompt: string;
     claraLabel: string;
+    claraTitle: string;
     claraPrompt: string;
+    claraBack: string;
     day: string;
     month: string;
     year: string;

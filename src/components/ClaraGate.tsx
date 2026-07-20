@@ -1,7 +1,8 @@
 import { useId, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
-import { matchesAnniversary, persistUnlock } from "../utils/unlock";
+import { matchesClaraBirthday, persistUnlock } from "../utils/unlock";
+import { BurritoSquatIntro } from "./BurritoSquatIntro";
 import {
   GateDateFields,
   parseDateField,
@@ -9,11 +10,11 @@ import {
 } from "./GateDateFields";
 import { LangSwitch } from "./LangSwitch";
 
-interface DateGateProps {
+interface ClaraGateProps {
   onUnlock: () => void;
 }
 
-export function DateGate({ onUnlock }: DateGateProps) {
+export function ClaraGate({ onUnlock }: ClaraGateProps) {
   const { t } = useI18n();
   const formId = useId();
   const [date, setDate] = useState<DateTriplet>({
@@ -23,6 +24,7 @@ export function DateGate({ onUnlock }: DateGateProps) {
   });
   const [error, setError] = useState(false);
   const [shake, setShake] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
 
   function fail() {
     setError(true);
@@ -39,12 +41,16 @@ export function DateGate({ onUnlock }: DateGateProps) {
       fail();
       return;
     }
-    if (!matchesAnniversary(d, m, y)) {
+    if (!matchesClaraBirthday(d, m, y)) {
       fail();
       return;
     }
     persistUnlock();
-    onUnlock();
+    setShowIntro(true);
+  }
+
+  if (showIntro) {
+    return <BurritoSquatIntro onDone={onUnlock} />;
   }
 
   return (
@@ -52,28 +58,33 @@ export function DateGate({ onUnlock }: DateGateProps) {
       <div className="flex flex-1 flex-col px-4 pt-[max(2.5rem,env(safe-area-inset-top))] sm:px-6">
         <div className="mx-auto flex w-full max-w-md flex-1 flex-col">
           <div className="mb-8 flex items-center justify-between sm:mb-10">
-            <span className="azulejo-corner" aria-hidden />
+            <Link
+              to="/"
+              className="meta-mono text-[color:var(--color-muted)] transition hover:text-[color:var(--color-ink)]"
+            >
+              {t.gate.claraBack}
+            </Link>
             <LangSwitch />
             <span className="azulejo-corner" aria-hidden />
           </div>
 
           <div
-            className={`animate-fade-up flex flex-1 flex-col justify-center pb-10 ${
+            className={`animate-fade-up flex flex-1 flex-col justify-center pb-16 ${
               shake ? "gate-shake" : ""
             }`}
           >
             <p className="meta-mono text-center text-[color:var(--color-burgundy)]">
-              {t.gate.overline}
+              {t.gate.claraLabel}
             </p>
 
             <h1 className="display mt-4 text-center text-[clamp(2.4rem,10vw,3.5rem)] leading-[0.95] text-[color:var(--color-ink)]">
-              {t.gate.title}
+              {t.gate.claraTitle}
             </h1>
 
             <div className="mx-auto mt-6 h-px w-14 bg-[color:var(--color-gold)]/70" />
 
             <p className="mx-auto mt-6 max-w-sm text-center text-[0.98rem] leading-relaxed text-[color:var(--color-muted)]">
-              {t.gate.prompt}
+              {t.gate.claraPrompt}
             </p>
 
             <form
@@ -92,7 +103,7 @@ export function DateGate({ onUnlock }: DateGateProps) {
                 dayLabel={t.gate.day}
                 monthLabel={t.gate.month}
                 yearLabel={t.gate.year}
-                legend={t.gate.prompt}
+                legend={t.gate.claraPrompt}
                 autoFocus
               />
 
@@ -113,15 +124,6 @@ export function DateGate({ onUnlock }: DateGateProps) {
                 {t.gate.submit}
               </button>
             </form>
-
-            <div className="mx-auto mt-12 h-px w-10 bg-[color:var(--color-line)]" />
-
-            <Link
-              to="/clara"
-              className="meta-mono mt-8 block text-center text-[color:var(--color-burgundy)] underline-offset-4 transition hover:underline"
-            >
-              {t.gate.claraLabel} →
-            </Link>
           </div>
         </div>
       </div>
