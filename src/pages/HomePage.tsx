@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BASE, daysBase } from "../data/itinerary";
 import { useI18n } from "../i18n";
 import { isAppleTouchDevice } from "../utils/device";
 import { googleMapsQueryUrl } from "../utils/maps";
-import { BurritoSquatPlayer } from "../components/BurritoSquatPlayer";
 import { LangSwitch } from "../components/LangSwitch";
 
 function baseMapsUrl() {
@@ -16,7 +14,6 @@ function baseMapsUrl() {
 
 export function HomePage() {
   const { t } = useI18n();
-  const [claraOpen, setClaraOpen] = useState(false);
 
   return (
     <div className="site-shell pb-safe-bar">
@@ -130,21 +127,6 @@ export function HomePage() {
           height={96}
           className="footer-avatar mx-auto mt-10"
         />
-
-        <button
-          type="button"
-          className="btn-ink meta-mono mt-6 px-5 py-2.5 tracking-[0.1em]"
-          aria-expanded={claraOpen}
-          onClick={() => setClaraOpen((open) => !open)}
-        >
-          {t.ui.claraSquats}
-        </button>
-
-        {claraOpen ? (
-          <div className="clara-squat-panel mx-auto mt-6 animate-fade-up">
-            <BurritoSquatPlayer playing showCaption />
-          </div>
-        ) : null}
       </footer>
     </div>
   );

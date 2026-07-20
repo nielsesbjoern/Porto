@@ -95,7 +95,6 @@ export interface Dictionary {
     deletePhoto: string;
     photoError: string;
     openAlbum: string;
-    claraSquats: string;
   };
   album: {
     overline: string;
