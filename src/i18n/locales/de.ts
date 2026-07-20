@@ -83,6 +83,7 @@ export const de: Dictionary = {
     deletePhoto: "Löschen",
     photoError: "Foto konnte nicht gespeichert werden.",
     openAlbum: "Fotobuch öffnen →",
+    claraSquats: "Clara",
   },
   album: {
     overline: "Nach dem Trip",

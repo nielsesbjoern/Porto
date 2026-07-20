@@ -865,7 +865,7 @@ a {
   animation: gate-shake 0.42s ease;
 }
 
-/* Clara burrito-squat unlock intro */
+/* Clara burrito-squat — fullscreen intro (original) + homepage player */
 .burrito-intro {
   position: relative;
   display: flex;
@@ -875,21 +875,55 @@ a {
   justify-content: center;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 90% 60% at 50% 35%, #4a5560 0%, transparent 55%),
-    linear-gradient(180deg, #3a424a 0%, #1e2429 42%, #12161a 100%);
+    radial-gradient(ellipse 80% 50% at 50% 20%, #3a4550 0%, transparent 55%),
+    linear-gradient(180deg, #2a3238 0%, #1a1f24 45%, #12161a 100%);
   color: #f4f7f8;
 }
 
-.burrito-intro__glow {
+.burrito-intro__gym {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.burrito-intro__rack {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: min(72vw, 280px);
+  height: 28%;
+  transform: translateX(-50%);
   background:
-    radial-gradient(
-      circle at 50% 42%,
-      color-mix(in srgb, #f4e4c4 12%, transparent),
-      transparent 42%
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 18px,
+      color-mix(in srgb, #8a9198 55%, transparent) 18px 22px
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 12%,
+      color-mix(in srgb, #5c656e 40%, transparent) 12% 14%,
+      transparent 14% 44%,
+      color-mix(in srgb, #5c656e 40%, transparent) 44% 46%,
+      transparent 46% 76%,
+      color-mix(in srgb, #5c656e 40%, transparent) 76% 78%,
+      transparent 78%
     );
+  opacity: 0.45;
+  mask-image: linear-gradient(180deg, transparent, #000 20%, #000 80%, transparent);
+}
+
+.burrito-intro__mat {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  width: min(70vw, 260px);
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: color-mix(in srgb, #1c6b5a 70%, #0a3d34);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 35%);
+  opacity: 0.85;
 }
 
 .burrito-intro__stage {
@@ -898,77 +932,456 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(88vw, 360px);
+  width: min(72vw, 220px);
 }
 
-.burrito-intro__frame {
+.burrito-intro__squatter {
   position: relative;
-  width: 100%;
-  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 90%;
+  animation: burrito-squat 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__face {
+  position: relative;
+  z-index: 3;
+  width: 72px;
+  height: 72px;
+  margin-bottom: -10px;
   overflow: hidden;
-  border-radius: 4px;
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, white 10%, transparent),
-    0 28px 60px rgb(0 0 0 / 45%);
-  background: #1a1f24;
+  border-radius: 50%;
+  border: 3px solid #f3e2c5;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 35%);
+  background: #c4a484;
 }
 
-.burrito-intro__stack {
-  position: absolute;
-  inset: 0;
-}
-
-.burrito-intro__photo {
-  position: absolute;
-  inset: 0;
+.burrito-intro__face img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 45%;
-  opacity: 0;
-  transition: opacity 90ms linear;
-  user-select: none;
-  pointer-events: none;
-  filter: contrast(1.04) saturate(1.05);
+  object-position: center 18%;
+  transform: scale(1.08);
 }
 
-.burrito-intro__photo--active {
-  opacity: 1;
+.burrito-intro__arms {
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  z-index: 4;
+  width: 150px;
+  height: 36px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.burrito-intro__arm {
+  position: absolute;
+  top: 4px;
+  width: 42px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c9a07a, #a67b52);
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / 12%);
+}
+
+.burrito-intro__arm--left {
+  left: 0;
+  transform: rotate(-18deg);
+  transform-origin: right center;
+  animation: burrito-arm-l 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__arm--right {
+  right: 0;
+  transform: rotate(18deg);
+  transform-origin: left center;
+  animation: burrito-arm-r 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__wrap {
+  position: relative;
+  z-index: 2;
+  width: 118px;
+  height: 148px;
+  overflow: hidden;
+  border-radius: 56% 56% 42% 42% / 28% 28% 58% 58%;
+  background:
+    linear-gradient(125deg, #f6e4c4 0%, #e8c992 38%, #d4a86a 72%, #c49252 100%);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, #a67b3d 35%, transparent),
+    0 12px 24px rgb(0 0 0 / 28%);
+}
+
+.burrito-intro__fold {
+  position: absolute;
+  border-radius: 999px;
+  background: color-mix(in srgb, #b8894a 28%, transparent);
+}
+
+.burrito-intro__fold--a {
+  top: 22%;
+  left: 12%;
+  width: 76%;
+  height: 10px;
+  transform: rotate(-8deg);
+}
+
+.burrito-intro__fold--b {
+  top: 48%;
+  left: 10%;
+  width: 80%;
+  height: 8px;
+  transform: rotate(6deg);
+}
+
+.burrito-intro__fold--c {
+  top: 70%;
+  left: 16%;
+  width: 68%;
+  height: 8px;
+  transform: rotate(-4deg);
+}
+
+.burrito-intro__filling {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 54%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 40% 40% 48% 48%;
+  background:
+    radial-gradient(circle at 35% 30%, #6b9e4e 0 28%, transparent 30%),
+    radial-gradient(circle at 68% 42%, #c45c3a 0 22%, transparent 24%),
+    radial-gradient(circle at 48% 68%, #e8d48a 0 30%, transparent 32%),
+    linear-gradient(180deg, #8f3d2a, #5c2418);
+  opacity: 0.85;
+  mask-image: linear-gradient(180deg, #000 40%, transparent 95%);
+}
+
+.burrito-intro__feet {
+  position: relative;
   z-index: 1;
+  display: flex;
+  gap: 28px;
+  margin-top: -6px;
+}
+
+.burrito-intro__feet span {
+  width: 28px;
+  height: 14px;
+  border-radius: 40% 40% 60% 60%;
+  background: #2a2e32;
+  box-shadow: 0 2px 0 #111;
 }
 
 .burrito-intro__shadow {
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  z-index: 2;
-  width: 48%;
-  height: 4.5%;
+  width: 96px;
+  height: 14px;
+  margin-top: 10px;
   border-radius: 50%;
-  background: rgb(0 0 0 / 45%);
-  filter: blur(6px);
-  transform: translateX(-50%);
-  animation: burrito-shadow 0.72s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-  pointer-events: none;
+  background: rgb(0 0 0 / 35%);
+  filter: blur(2px);
+  animation: burrito-shadow 0.75s ease-in-out infinite;
 }
 
 .burrito-intro__caption {
   position: relative;
   z-index: 1;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   letter-spacing: 0.12em;
+  color: color-mix(in srgb, #f4f7f8 70%, transparent);
+  animation: burrito-fade 0.6s ease both;
+}
+
+.clara-squat-panel {
+  width: min(100%, 240px);
+  padding: 1.25rem 1rem 1rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 20%, #3a4550 0%, transparent 55%),
+    linear-gradient(180deg, #2a3238 0%, #1a1f24 55%, #12161a 100%);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, white 8%, transparent),
+    0 16px 36px rgb(0 0 0 / 18%);
+}
+
+.burrito-player {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.burrito-player__gym {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.burrito-player__rack {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  width: 88%;
+  height: 42%;
+  transform: translateX(-50%);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 18px,
+      color-mix(in srgb, #8a9198 55%, transparent) 18px 22px
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 12%,
+      color-mix(in srgb, #5c656e 40%, transparent) 12% 14%,
+      transparent 14% 44%,
+      color-mix(in srgb, #5c656e 40%, transparent) 44% 46%,
+      transparent 46% 76%,
+      color-mix(in srgb, #5c656e 40%, transparent) 76% 78%,
+      transparent 78%
+    );
+  opacity: 0.4;
+  mask-image: linear-gradient(180deg, transparent, #000 20%, #000 80%, transparent);
+}
+
+.burrito-player__mat {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  width: 78%;
+  height: 12px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: color-mix(in srgb, #1c6b5a 70%, #0a3d34);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 35%);
+  opacity: 0.85;
+}
+
+.burrito-player__stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.burrito-player__squatter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 90%;
+}
+
+.burrito-player--playing .burrito-player__squatter {
+  animation: burrito-squat 0.75s ease-in-out infinite;
+}
+
+.burrito-player__face {
+  position: relative;
+  z-index: 3;
+  width: 72px;
+  height: 72px;
+  margin-bottom: -10px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #f3e2c5;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 35%);
+  background: #c4a484;
+}
+
+.burrito-player__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.08);
+}
+
+.burrito-player__arms {
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  z-index: 4;
+  width: 150px;
+  height: 36px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.burrito-player__arm {
+  position: absolute;
+  top: 4px;
+  width: 42px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c9a07a, #a67b52);
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / 12%);
+}
+
+.burrito-player__arm--left {
+  left: 0;
+  transform: rotate(-18deg);
+  transform-origin: right center;
+}
+
+.burrito-player__arm--right {
+  right: 0;
+  transform: rotate(18deg);
+  transform-origin: left center;
+}
+
+.burrito-player--playing .burrito-player__arm--left {
+  animation: burrito-arm-l 0.75s ease-in-out infinite;
+}
+
+.burrito-player--playing .burrito-player__arm--right {
+  animation: burrito-arm-r 0.75s ease-in-out infinite;
+}
+
+.burrito-player__wrap {
+  position: relative;
+  z-index: 2;
+  width: 118px;
+  height: 148px;
+  overflow: hidden;
+  border-radius: 56% 56% 42% 42% / 28% 28% 58% 58%;
+  background:
+    linear-gradient(125deg, #f6e4c4 0%, #e8c992 38%, #d4a86a 72%, #c49252 100%);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, #a67b3d 35%, transparent),
+    0 12px 24px rgb(0 0 0 / 28%);
+}
+
+.burrito-player__fold {
+  position: absolute;
+  border-radius: 999px;
+  background: color-mix(in srgb, #b8894a 28%, transparent);
+}
+
+.burrito-player__fold--a {
+  top: 22%;
+  left: 12%;
+  width: 76%;
+  height: 10px;
+  transform: rotate(-8deg);
+}
+
+.burrito-player__fold--b {
+  top: 48%;
+  left: 10%;
+  width: 80%;
+  height: 8px;
+  transform: rotate(6deg);
+}
+
+.burrito-player__fold--c {
+  top: 70%;
+  left: 16%;
+  width: 68%;
+  height: 8px;
+  transform: rotate(-4deg);
+}
+
+.burrito-player__filling {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 54%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 40% 40% 48% 48%;
+  background:
+    radial-gradient(circle at 35% 30%, #6b9e4e 0 28%, transparent 30%),
+    radial-gradient(circle at 68% 42%, #c45c3a 0 22%, transparent 24%),
+    radial-gradient(circle at 48% 68%, #e8d48a 0 30%, transparent 32%),
+    linear-gradient(180deg, #8f3d2a, #5c2418);
+  opacity: 0.85;
+  mask-image: linear-gradient(180deg, #000 40%, transparent 95%);
+}
+
+.burrito-player__feet {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 28px;
+  margin-top: -6px;
+}
+
+.burrito-player__feet span {
+  width: 28px;
+  height: 14px;
+  border-radius: 40% 40% 60% 60%;
+  background: #2a2e32;
+  box-shadow: 0 2px 0 #111;
+}
+
+.burrito-player__shadow {
+  width: 96px;
+  height: 14px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 35%);
+  filter: blur(2px);
+}
+
+.burrito-player--playing .burrito-player__shadow {
+  animation: burrito-shadow 0.75s ease-in-out infinite;
+}
+
+.burrito-player__caption {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  letter-spacing: 0.12em;
+  text-align: center;
   color: color-mix(in srgb, #f4f7f8 72%, transparent);
-  animation: burrito-fade 0.55s ease both;
+}
+
+@keyframes burrito-squat {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: translateY(28px) scaleY(0.82) scaleX(1.08);
+  }
+}
+
+@keyframes burrito-arm-l {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(-38deg) translateY(6px);
+  }
+}
+
+@keyframes burrito-arm-r {
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(38deg) translateY(6px);
+  }
 }
 
 @keyframes burrito-shadow {
   0%,
   100% {
-    transform: translateX(-50%) scaleX(0.88);
-    opacity: 0.3;
+    transform: scaleX(1);
+    opacity: 0.35;
   }
   50% {
-    transform: translateX(-50%) scaleX(1.18);
+    transform: scaleX(1.25);
     opacity: 0.55;
   }
 }
@@ -993,11 +1406,15 @@ a {
   .couple-walker--walking .couple-walker__portrait,
   .couple-walker--walking .couple-walker__shadow,
   .gate-shake,
+  .burrito-intro__squatter,
+  .burrito-intro__arm--left,
+  .burrito-intro__arm--right,
   .burrito-intro__shadow,
-  .burrito-intro__caption {
+  .burrito-intro__caption,
+  .burrito-player--playing .burrito-player__squatter,
+  .burrito-player--playing .burrito-player__arm--left,
+  .burrito-player--playing .burrito-player__arm--right,
+  .burrito-player--playing .burrito-player__shadow {
     animation: none;
-  }
-  .burrito-intro__photo {
-    transition: none;
   }
 }

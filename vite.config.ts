@@ -18,7 +18,6 @@ export default defineConfig({
         "icons.svg",
         "avatars/*.png",
         "avatars/*.jpg",
-        "avatars/clara-squat/*.jpg",
         "icons/*.png",
       ],
       manifest: {
