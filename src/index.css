@@ -184,6 +184,381 @@ a {
   backdrop-filter: blur(6px);
 }
 
+.album-card {
+  border: 1px solid color-mix(in srgb, var(--color-blue-deep) 70%, var(--color-ink));
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-blue) 88%, white) 0%,
+      var(--color-blue) 48%,
+      var(--color-blue-deep) 100%
+    );
+  box-shadow:
+    inset 0 0 0 3px color-mix(in srgb, white 18%, transparent),
+    0 10px 28px color-mix(in srgb, var(--color-blue) 28%, transparent);
+}
+
+.album-card:hover {
+  border-color: color-mix(in srgb, var(--color-gold) 75%, white);
+}
+
+/* —— Photo book —— */
+.photo-book-shell {
+  background-image:
+    radial-gradient(
+      ellipse 90% 50% at 50% 0%,
+      color-mix(in srgb, var(--color-blue) 16%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #eef3f5 0%,
+      var(--color-paper) 40%,
+      var(--color-paper-deep) 100%
+    );
+}
+
+.photo-book {
+  position: relative;
+  min-height: min(72dvh, 640px);
+  perspective: 1600px;
+}
+
+.photo-book--open {
+  min-height: 0;
+}
+
+.photo-book__cover {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.95s cubic-bezier(0.65, 0.05, 0.36, 1),
+    opacity 0.4s ease 0.15s,
+    visibility 0s linear 0s;
+  box-shadow:
+    8px 12px 40px color-mix(in srgb, var(--color-blue-deep) 35%, transparent),
+    inset -10px 0 24px color-mix(in srgb, black 18%, transparent);
+}
+
+.photo-book__cover-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: min(72dvh, 640px);
+  padding: 2.5rem 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-blue-deep) 80%, black);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-blue) 92%, white) 0%,
+      var(--color-blue) 42%,
+      var(--color-blue-deep) 100%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 10px,
+      color-mix(in srgb, white 4%, transparent) 10px 11px
+    );
+  background-blend-mode: normal, soft-light;
+}
+
+.photo-book__spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 14px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, black 35%, var(--color-blue-deep)),
+    color-mix(in srgb, white 12%, var(--color-blue-deep)) 40%,
+    color-mix(in srgb, black 25%, var(--color-blue-deep))
+  );
+  box-shadow: 2px 0 8px color-mix(in srgb, black 25%, transparent);
+}
+
+.photo-book__corner {
+  position: absolute;
+  opacity: 0.45;
+  filter: brightness(2);
+}
+
+.photo-book__corner--tl {
+  top: 1.1rem;
+  left: 1.4rem;
+}
+
+.photo-book__corner--tr {
+  top: 1.1rem;
+  right: 1.1rem;
+}
+
+.photo-book__corner--bl {
+  bottom: 1.1rem;
+  left: 1.4rem;
+}
+
+.photo-book__corner--br {
+  right: 1.1rem;
+  bottom: 1.1rem;
+}
+
+.photo-book__gold-rule {
+  height: 1px;
+  width: 4.5rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+}
+
+.photo-book--open .photo-book__cover {
+  transform: rotateY(-118deg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform 0.95s cubic-bezier(0.65, 0.05, 0.36, 1),
+    opacity 0.35s ease 0.45s,
+    visibility 0s linear 0.9s;
+}
+
+.photo-book__pages {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 0.45s ease 0.35s,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+    visibility 0s linear 0.9s;
+}
+
+.photo-book--open .photo-book__pages {
+  position: relative;
+  inset: auto;
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition:
+    opacity 0.5s ease 0.4s,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.35s,
+    visibility 0s linear 0s;
+}
+
+.photo-book__page {
+  padding: 1.5rem 1.25rem 2rem;
+  border: 1px solid color-mix(in srgb, var(--color-line) 80%, var(--color-gold));
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-ink) 6%, transparent) 0,
+      transparent 14px
+    ),
+    linear-gradient(
+      180deg,
+      #fbfcfd 0%,
+      #f3f6f8 100%
+    );
+  box-shadow:
+    0 1px 0 color-mix(in srgb, white 80%, transparent),
+    0 18px 40px color-mix(in srgb, var(--color-blue) 14%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, white 55%, transparent);
+}
+
+@media (min-width: 640px) {
+  .photo-book__page {
+    padding: 2rem 1.75rem 2.5rem;
+  }
+}
+
+.photo-book__chapter {
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, white 70%, var(--color-paper));
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.photo-book__chapter--open {
+  border-color: color-mix(in srgb, var(--color-blue) 45%, var(--color-line));
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-blue) 10%, transparent);
+}
+
+.photo-book__chapter-tab,
+.photo-book__section-tab,
+.photo-book__leaf-tab {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.photo-book__chapter-tab:hover,
+.photo-book__section-tab:hover,
+.photo-book__leaf-tab:hover {
+  background: color-mix(in srgb, var(--color-blue) 5%, transparent);
+}
+
+.photo-book__fold-mark {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.photo-book__chapter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0 0.75rem 1rem;
+  animation: photo-book-unfold 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.photo-book__section {
+  border: 1px solid color-mix(in srgb, var(--color-line) 85%, transparent);
+  background: color-mix(in srgb, white 88%, var(--color-paper));
+}
+
+.photo-book__section--open {
+  border-color: color-mix(in srgb, var(--color-blue) 30%, var(--color-line));
+}
+
+.photo-book__section-tab {
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+}
+
+.photo-book__section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.55rem 0.75rem;
+  animation: photo-book-unfold 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.photo-book__leaf {
+  border: 1px dashed color-mix(in srgb, var(--color-line) 90%, var(--color-blue));
+  background:
+    linear-gradient(
+      180deg,
+      #fff 0%,
+      color-mix(in srgb, var(--color-paper) 55%, white) 100%
+    );
+}
+
+.photo-book__leaf--open {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--color-blue) 35%, var(--color-line));
+}
+
+.photo-book__leaf-body {
+  padding: 0 0.85rem 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+  animation: photo-book-unfold 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.photo-book__media {
+  padding-top: 0.85rem;
+}
+
+.photo-book__polaroids {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  align-items: center;
+}
+
+.photo-book__polaroid {
+  position: relative;
+  width: min(100%, 22rem);
+  padding: 0.7rem 0.7rem 1.6rem;
+  background: #fff;
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--color-ink) 6%, transparent),
+    0 12px 28px color-mix(in srgb, var(--color-ink) 12%, transparent);
+}
+
+.photo-book__polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--color-paper-deep);
+}
+
+.photo-book__polaroid--1 {
+  transform: rotate(-1.4deg);
+}
+
+.photo-book__polaroid--2 {
+  transform: rotate(1.6deg);
+  margin-left: 0.75rem;
+}
+
+.photo-book__polaroid--3 {
+  transform: rotate(-0.8deg);
+  margin-right: 0.75rem;
+}
+
+@keyframes photo-book-unfold {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-book__cover,
+  .photo-book--open .photo-book__cover,
+  .photo-book__pages,
+  .photo-book--open .photo-book__pages,
+  .photo-book__chapter-body,
+  .photo-book__section-body,
+  .photo-book__leaf-body {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .photo-book--open .photo-book__cover {
+    transform: none;
+  }
+
+  .photo-book__polaroid--1,
+  .photo-book__polaroid--2,
+  .photo-book__polaroid--3 {
+    transform: none;
+    margin: 0;
+  }
+}
+
 .map-frame {
   position: relative;
   z-index: 0;
@@ -490,6 +865,290 @@ a {
   animation: gate-shake 0.42s ease;
 }
 
+/* Clara burrito-squat unlock intro */
+.burrito-intro {
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 20%, #3a4550 0%, transparent 55%),
+    linear-gradient(180deg, #2a3238 0%, #1a1f24 45%, #12161a 100%);
+  color: #f4f7f8;
+}
+
+.burrito-intro__gym {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.burrito-intro__rack {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: min(72vw, 280px);
+  height: 28%;
+  transform: translateX(-50%);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 18px,
+      color-mix(in srgb, #8a9198 55%, transparent) 18px 22px
+    ),
+    linear-gradient(
+      180deg,
+      transparent 0 12%,
+      color-mix(in srgb, #5c656e 40%, transparent) 12% 14%,
+      transparent 14% 44%,
+      color-mix(in srgb, #5c656e 40%, transparent) 44% 46%,
+      transparent 46% 76%,
+      color-mix(in srgb, #5c656e 40%, transparent) 76% 78%,
+      transparent 78%
+    );
+  opacity: 0.45;
+  mask-image: linear-gradient(180deg, transparent, #000 20%, #000 80%, transparent);
+}
+
+.burrito-intro__mat {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  width: min(70vw, 260px);
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: color-mix(in srgb, #1c6b5a 70%, #0a3d34);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 35%);
+  opacity: 0.85;
+}
+
+.burrito-intro__stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(72vw, 220px);
+}
+
+.burrito-intro__squatter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 90%;
+  animation: burrito-squat 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__face {
+  position: relative;
+  z-index: 3;
+  width: 72px;
+  height: 72px;
+  margin-bottom: -10px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid #f3e2c5;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 35%);
+  background: #c4a484;
+}
+
+.burrito-intro__face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.08);
+}
+
+.burrito-intro__arms {
+  position: absolute;
+  top: 78px;
+  left: 50%;
+  z-index: 4;
+  width: 150px;
+  height: 36px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.burrito-intro__arm {
+  position: absolute;
+  top: 4px;
+  width: 42px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c9a07a, #a67b52);
+  box-shadow: inset 0 -2px 0 rgb(0 0 0 / 12%);
+}
+
+.burrito-intro__arm--left {
+  left: 0;
+  transform: rotate(-18deg);
+  transform-origin: right center;
+  animation: burrito-arm-l 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__arm--right {
+  right: 0;
+  transform: rotate(18deg);
+  transform-origin: left center;
+  animation: burrito-arm-r 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__wrap {
+  position: relative;
+  z-index: 2;
+  width: 118px;
+  height: 148px;
+  overflow: hidden;
+  border-radius: 56% 56% 42% 42% / 28% 28% 58% 58%;
+  background:
+    linear-gradient(125deg, #f6e4c4 0%, #e8c992 38%, #d4a86a 72%, #c49252 100%);
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, #a67b3d 35%, transparent),
+    0 12px 24px rgb(0 0 0 / 28%);
+}
+
+.burrito-intro__fold {
+  position: absolute;
+  border-radius: 999px;
+  background: color-mix(in srgb, #b8894a 28%, transparent);
+}
+
+.burrito-intro__fold--a {
+  top: 22%;
+  left: 12%;
+  width: 76%;
+  height: 10px;
+  transform: rotate(-8deg);
+}
+
+.burrito-intro__fold--b {
+  top: 48%;
+  left: 10%;
+  width: 80%;
+  height: 8px;
+  transform: rotate(6deg);
+}
+
+.burrito-intro__fold--c {
+  top: 70%;
+  left: 16%;
+  width: 68%;
+  height: 8px;
+  transform: rotate(-4deg);
+}
+
+.burrito-intro__filling {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 54%;
+  height: 58%;
+  transform: translateX(-50%);
+  border-radius: 40% 40% 48% 48%;
+  background:
+    radial-gradient(circle at 35% 30%, #6b9e4e 0 28%, transparent 30%),
+    radial-gradient(circle at 68% 42%, #c45c3a 0 22%, transparent 24%),
+    radial-gradient(circle at 48% 68%, #e8d48a 0 30%, transparent 32%),
+    linear-gradient(180deg, #8f3d2a, #5c2418);
+  opacity: 0.85;
+  mask-image: linear-gradient(180deg, #000 40%, transparent 95%);
+}
+
+.burrito-intro__feet {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 28px;
+  margin-top: -6px;
+}
+
+.burrito-intro__feet span {
+  width: 28px;
+  height: 14px;
+  border-radius: 40% 40% 60% 60%;
+  background: #2a2e32;
+  box-shadow: 0 2px 0 #111;
+}
+
+.burrito-intro__shadow {
+  width: 96px;
+  height: 14px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 35%);
+  filter: blur(2px);
+  animation: burrito-shadow 0.75s ease-in-out infinite;
+}
+
+.burrito-intro__caption {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.75rem;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, #f4f7f8 70%, transparent);
+  animation: burrito-fade 0.6s ease both;
+}
+
+@keyframes burrito-squat {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: translateY(28px) scaleY(0.82) scaleX(1.08);
+  }
+}
+
+@keyframes burrito-arm-l {
+  0%,
+  100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(-38deg) translateY(6px);
+  }
+}
+
+@keyframes burrito-arm-r {
+  0%,
+  100% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(38deg) translateY(6px);
+  }
+}
+
+@keyframes burrito-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleX(1.25);
+    opacity: 0.55;
+  }
+}
+
+@keyframes burrito-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -498,7 +1157,12 @@ a {
   .hero-river,
   .couple-walker--walking .couple-walker__portrait,
   .couple-walker--walking .couple-walker__shadow,
-  .gate-shake {
+  .gate-shake,
+  .burrito-intro__squatter,
+  .burrito-intro__arm--left,
+  .burrito-intro__arm--right,
+  .burrito-intro__shadow,
+  .burrito-intro__caption {
     animation: none;
   }
 }

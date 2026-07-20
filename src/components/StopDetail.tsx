@@ -1,6 +1,7 @@
 import type { Stop } from "../data/itinerary";
 import { useI18n } from "../i18n";
 import { stopDirectionsUrl, stopMapsUrl } from "../utils/maps";
+import { StopPhotos } from "./StopPhotos";
 
 interface StopDetailProps {
   stop: Stop;
@@ -91,6 +92,8 @@ export function StopDetail({
           {t.ui.walkingRoute}
         </a>
       </div>
+
+      <StopPhotos stopId={stop.id} />
 
       <div className="mt-8 flex flex-col gap-2 border-t border-[color:var(--color-line)] pt-5 sm:flex-row">
         {!isDone ? (

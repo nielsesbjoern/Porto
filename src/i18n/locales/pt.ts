@@ -24,6 +24,8 @@ export const pt: Dictionary = {
     overline: "Para Miriam & Niels",
     title: "Desde quando estão Miriam e Niels juntos?",
     prompt: "Introduzam a data — depois abre o vosso plano do Porto.",
+    claraLabel: "Para Clara",
+    claraPrompt: "O teu aniversário — dia · mês · ano.",
     day: "Dia",
     month: "Mês",
     year: "Ano",
@@ -72,19 +74,39 @@ export const pt: Dictionary = {
     iosAddHome:
       "Adicionar ao ecrã principal: Partilhar → “Adicionar ao ecrã principal” — depois o Porto funciona como uma app, também offline.",
     iosAddHomeDismiss: "Percebido",
+    photosLabel: "Fotos",
+    addPhotos: "Adicionar fotos",
+    photoSaving: "A guardar…",
+    photosEmptyStop: "Ainda sem fotos neste sítio.",
+    deletePhoto: "Apagar",
+    photoError: "Não foi possível guardar a foto.",
+    openAlbum: "Abrir o fotolivro →",
+  },
+  album: {
+    overline: "Depois da viagem",
+    title: "O nosso fotolivro",
+    intro:
+      "Todos os sítios por dia e hora — abram um capítulo, adicionem fotos, folheiem.",
+    openBook: "Abrir o livro →",
+    closeBook: "Fechar",
+    contents: "Índice",
+    foldOut: "Abrir",
+    foldIn: "Fechar",
+    placeOf: "Sítio {current} de {total}",
+    photoCount: "{n} fotos",
   },
   days: {
     "1": {
       navLabel: "Segunda",
       title: "Segunda — Centro histórico & Matosinhos",
       blurb:
-        "Manhã: um circuito pelo centro até ao almoço. Noite: praia e peixe em Matosinhos.",
+        "Manhã: circuito pelo centro com Clérigos e pastéis, depois almoço. Noite: praia e peixe em Matosinhos.",
     },
     "2": {
       navLabel: "Terça",
       title: "Terça — Gaia & rodízio",
       blurb:
-        "Manhã: Bolhão, ponte e vinho do Porto em Gaia. Noite: Fogo de Chão, Virtudes, Mirajazz.",
+        "Manhã: padaria, Bolhão, ponte e vinho do Porto em Gaia. Noite: Fogo, jardins do Cristal, Virtudes, Mirajazz.",
     },
   },
   sections: {
@@ -92,14 +114,14 @@ export const pt: Dictionary = {
       navLabel: "Manhã",
       title: "Manhã — Centro histórico",
       intro:
-        "Uma linha, sem voltar atrás: descer a Santa Catarina a partir do apartamento, passar pela Sé e miradouros escondidos até ao rio, pela igreja dourada e subir a Rua das Flores até à Lello. Termina no almoço.",
-      tip: "RESERVE A LELLO PARA O ÚLTIMO HORÁRIO DA MANHÃ · ~4,5 KM",
+        "Uma linha, sem voltar atrás: pequeno-almoço a descer a Santa Catarina, pela Sé e miradouros escondidos até ao rio, pela igreja dourada, subir a Rua das Flores até aos Clérigos e à Lello, almoço perto, depois pastéis na Manteigaria a caminho de casa.",
+      tip: "RESERVE A LELLO PARA O ÚLTIMO HORÁRIO DA MANHÃ · CLÉRIGOS ANTES OU DEPOIS · ~4,5 KM",
       stops: {
         "m1-breakfast": {
           title: "Pequeno-almoço — o início",
-          tag: "the grow",
-          body: "Três minutos do apartamento, numa travessa sossegada (Travessa de Alferes Malheiro 83) — pequeno pátio, pratos generosos, cappuccino mesmo bom, sem fila para fotos. Abre às 8:30. Alternativa no caminho: Eatery 119 (Rua de Rodrigues Sampaio, a partir das 9h) com excelentes ovos turcos.",
-          meta: "3 min do apartamento — depois direto para a Santa Catarina",
+          tag: "Eatery 119",
+          body: "Na Rua de Rodrigues Sampaio, mesmo no caminho a descer para a Santa Catarina — café de especialidade, excelentes ovos turcos, sala quente de azulejos verdes. Abre às 9h. Alternativa mais calma a três minutos do apartamento: the grow (Travessa de Alferes Malheiro 83, a partir das 8:30) se quiserem pátio sem fila de brunch.",
+          meta: "No caminho a descer — depois direto para a Santa Catarina",
         },
         "m1-santa-catarina": {
           title:
@@ -127,16 +149,22 @@ export const pt: Dictionary = {
           meta: "3 min da margem do rio",
         },
         "m1-lello": {
-          title: "Rua das Flores → Livraria Lello + Manifesto Library + Carmo",
+          title: "Rua das Flores → Torre dos Clérigos → Lello + Carmo",
           tag: "Para vocês dois",
-          body: "A Rua das Flores sobe por lojas de cerâmica, papel e oficinas. No topo, a Lello — e no novo auditório de Siza, a Manifesto Library: o clube Service95 da Dua Lipa mostra permanentemente 100 livros banidos e censurados (Power, Control, Voice, Memory). Comprem bilhetes online; a taxa desconta-se na compra de um livro. Ao lado, a fachada de azulejo da Igreja do Carmo. Aos sábados, 3 min mais: Mercado Porto Belo, mercado vintage, vinil e livros na Praça Carlos Alberto.",
-          meta: "Flores começa na Ribeira, a Lello fica a 6 min",
+          body: "A Rua das Flores sobe por lojas de cerâmica, papel e oficinas. No topo: Torre dos Clérigos — subam a torre barroca para o panorama da cidade (cerca de 20–30 min; antes da Lello se o bilhete for mais tarde, depois se tiverem horário cedo). Depois a Lello — e no novo auditório de Siza, a Manifesto Library: o clube Service95 da Dua Lipa mostra permanentemente 100 livros banidos e censurados. Comprem bilhetes online; a taxa desconta-se na compra de um livro. Ao lado, a fachada de azulejo da Igreja do Carmo. Aos sábados, 3 min mais: Mercado Porto Belo na Praça Carlos Alberto.",
+          meta: "Flores a partir do rio · Clérigos e Lello partilham a mesma praça",
         },
         "m1-lunch": {
           title: "Almoço",
           tag: "Jardim do Trás",
-          body: "Três minutos da Lello, escondido numa travessa na Rua de Trás 224 — sítio pequenino gerido por duas pessoas que se importam de verdade. Carpaccio de polvo, risotto de camarão tigre, bife argentino, cada prato pensado. Restaurante a sério, não snack. Fecha à terça. Se for terça: The Door (Rua das Taipas, perto, 4,8 estrelas, menu fusion pequeno) ou Cozinha dos Lóios (Rua dos Caldeireiros, a meio do percurso, polvo e carne, sempre aberto). No regresso, pastéis de nata na Manteigaria. Depois 15 min até casa. Sesta.",
+          body: "Três minutos da Lello, escondido numa travessa na Rua de Trás 224 — sítio pequenino gerido por duas pessoas que se importam de verdade. Carpaccio de polvo, risotto de camarão tigre, bife argentino, cada prato pensado. Restaurante a sério, não snack. Fecha à terça. Se for terça: The Door (Rua das Taipas, perto) ou Cozinha dos Lóios (Rua dos Caldeireiros, a meio do percurso). Segue: Manteigaria para pastéis a caminho de casa.",
           meta: "Artesanal, não casual",
+        },
+        "m1-manteigaria": {
+          title: "Pastéis de nata — Manteigaria",
+          tag: "Quentes do forno",
+          body: "Na Rua de Santa Catarina a caminho de casa — pastéis de nata assados na montra, açúcar e canela por cima, ainda quentes. Levem uns para levar, depois cerca de 10–15 min até ao apartamento. Sesta antes de Matosinhos.",
+          meta: "No regresso do almoço · depois sesta",
         },
       },
     },
@@ -182,9 +210,9 @@ export const pt: Dictionary = {
       stops: {
         "m2-breakfast": {
           title: "Pequeno-almoço — o início",
-          tag: "Breakfast Lovers Bolhão",
-          body: "Cinco minutos do apartamento na Rua da Alegria 87 — café de pequeno-almoço cuidado, com mini porções para provar um pouco de tudo, abre às 8h. Se preferirem só café e comer no mercado: My Coffee Porto no Bolhão (Fernandes Tomás 646) fica no caminho.",
-          meta: "5 min do apartamento, o mercado é à volta da esquina",
+          tag: "A Padaria Portuguesa · Trindade",
+          body: "Perto do metro Trindade — padaria portuguesa clássica para uma manhã rápida: café, bolas, croissants, sem teatro de brunch. Abre cedo; ideal antes do Bolhão. Se quiserem pequeno-almoço de prato: Breakfast Lovers na Rua da Alegria 87 (a partir das 8h), cinco minutos do apartamento.",
+          meta: "5–8 min do apartamento · depois o Bolhão é à volta da esquina",
         },
         "m2-bolhao": {
           title: "Mercado do Bolhão",
@@ -222,8 +250,8 @@ export const pt: Dictionary = {
       navLabel: "Noite",
       title: "Noite — Rodízio & jazz no Douro",
       intro:
-        "Plano fixo: rodízio brasileiro no Fogo de Chão (Norte Shopping), regresso em direção ao apartamento, uma pausa curta no Passeio das Virtudes, e fechar no rooftop do Mirajazz.",
-      tip: "RESERVEM O FOGO · CONFIRMEM O LIVE DO MIRAJAZZ",
+        "Plano fixo: rodízio brasileiro no Fogo de Chão (Norte Shopping), metro de volta, hora dourada nos Jardins do Palácio de Cristal, a descer até ao Passeio das Virtudes, e fechar no rooftop do Mirajazz.",
+      tip: "RESERVEM O FOGO · CRISTAL À HORA DOURADA · CONFIRMEM O LIVE DO MIRAJAZZ",
       stops: {
         "e2-metro": {
           title: "Metro até ao Norte Shopping",
@@ -237,10 +265,16 @@ export const pt: Dictionary = {
           body: "Rodízio brasileiro: carne no espeto, salad bar, sem menu de opções. A filial do Norte Shopping é a certa — ao pé do metro, regresso fácil à cidade. Reservem.",
           meta: "Mesmo no shopping · reservem",
         },
+        "e2-cristal": {
+          title: "Jardins do Palácio de Cristal",
+          tag: "Hora dourada",
+          body: "Metro de volta em direção ao apartamento, depois a oeste para os jardins do Palácio de Cristal — caminhos largos, pavões, vistas do Douro entre as árvores. Trinta a quarenta e cinco minutos à hora dourada bastam; não precisam de fazer o parque todo. Depois a descer para as Virtudes (~10–15 min).",
+          meta: "Depois do Fogo · antes das Virtudes e do Mirajazz",
+        },
         "e2-virtudes": {
           title: "Passeio das Virtudes",
           tag: "Paragem curta no Douro",
-          body: "Metro de volta ao Bolhão, depois 15–20 min a descer até Miragaia. Parem no Jardim / Passeio das Virtudes — luz da noite sobre o Douro, locais, sem programa extra. Opcional ao lado: Miradouro da Vitória.",
+          body: "A descer do Cristal até Miragaia. Parem no Jardim / Passeio das Virtudes — luz da noite sobre o Douro, locais, sem programa extra. Opcional ao lado: Miradouro da Vitória.",
           meta: "A caminho do Mirajazz",
         },
         "e2-mirajazz": {

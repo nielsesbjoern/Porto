@@ -4,7 +4,7 @@ import type { Locale } from "./types";
 export const stories: Record<Locale, Record<string, string>> = {
   en: {
     "m1-breakfast":
-      "Porto's breakfast culture was never hotel buffets — it grew out of workers' cafés near the markets, where bakers opened early for fishermen and shopkeepers. Side-street spots like this still keep that habit: quiet courtyards, serious coffee, no performance.",
+      "Porto's breakfast culture was never hotel buffets — it grew out of workers' cafés near the markets, where bakers opened early for fishermen and shopkeepers. Specialty spots like Eatery 119 keep that habit alive with serious coffee and a proper plate, still on a side street rather than a tourist square.",
     "m1-santa-catarina":
       "Rua de Santa Catarina became Porto's shopping artery in the late 1800s. Capela das Almas got its famous blue azulejos in 1929, covering an older chapel; Majestic opened in 1921 as a Belle Époque salon for writers and flâneurs. Pérola do Bolhão has been selling bacalhau and spices under that Art Nouveau facade for over a century.",
     "m1-sao-bento":
@@ -14,9 +14,11 @@ export const stories: Record<Locale, Record<string, string>> = {
     "m1-sao-francisco":
       "The Gothic church of São Francisco was stripped and gilded in the 17th–18th centuries until almost every surface shone — so much gold that 19th-century liberals mocked it as decadent. Beneath it, the catacombs hold Franciscan brothers; the glass floor over the ossuary is a later, darker twist on that burial tradition. Next door, the Palácio da Bolsa (1842) was the merchants' palace of a city built on trade.",
     "m1-lello":
-      "Livraria Lello opened in 1906 in a neo-Gothic jewel box of wood and stained glass — later mythologized as a Harry Potter inspiration, which both saved and overcrowded it. Rua das Flores was once the florists' and artisans' street climbing from the river. Igreja do Carmo (1768) wears one of Porto's great azulejo side walls; the Manifesto Library's banned-book wall is a new chapter in the same building's story about what gets said and what gets silenced.",
+      "The Torre dos Clérigos (1763) was once Portugal's tallest tower — Nicolau Nasoni's baroque landmark for a city that measured itself by granite and height. Livraria Lello opened in 1906 in a neo-Gothic jewel box of wood and stained glass — later mythologized as a Harry Potter inspiration, which both saved and overcrowded it. Rua das Flores was once the florists' and artisans' street; Igreja do Carmo (1768) wears one of Porto's great azulejo side walls.",
     "m1-lunch":
-      "The lanes behind Clérigos and Flores were always where locals ate when tourists stayed on the riverfront. Small rooms, handwritten menus, octopus and rice — the Porto lunch that ends a morning loop. Pastéis de nata arrived from Lisbon's convent kitchens, but Manteigaria made the habit local: sugar, cinnamon, then home for a nap.",
+      "The lanes behind Clérigos and Flores were always where locals ate when tourists stayed on the riverfront. Small rooms, handwritten menus, octopus and rice — the Porto lunch that ends a morning loop.",
+    "m1-manteigaria":
+      "Pastéis de nata arrived from Lisbon's convent kitchens, but Manteigaria made the habit local and visible: custard baked in the window, sugar, cinnamon, then home for a nap. Santa Catarina is the right street for that walk — pastry as punctuation, not a pilgrimage.",
     "e1-metro":
       "Porto's metro is young by European standards (2002), but Line A follows the logic of an older city: connect the granite centre to the fishing coast. Matosinhos was never a suburb invented for tourists — it was where the catch came in, and the metro simply made the old coastal dinner possible without a car.",
     "e1-beach":
@@ -26,7 +28,7 @@ export const stories: Record<Locale, Record<string, string>> = {
     "e1-gelado":
       "Closing a Portuguese night with ice cream is a quiet ritual — something cold after salt and grill, then the metro humming back under the city. Bolhão at that hour feels like the neighbourhood again, not a destination.",
     "m2-breakfast":
-      "Bolhão mornings start with the market's rhythm: shutters up, fish on ice, coffee before bargaining. Breakfast spots around Rua da Alegria exist for that early crowd — people who want eggs and juice before the tiles and tour groups wake up.",
+      "Portuguese mornings often start at the padaria, not the brunch counter: coffee at the bar, a warm bola or croissant, then out into the day. Chains like A Padaria Portuguesa keep that habit near the metro — Trindade first, Bolhão next.",
     "m2-bolhao":
       "Mercado do Bolhão opened in 1914 as Porto's central food market, a Beaux-Arts iron-and-stone hall where the city's kitchen still shops. After years of renovation it returned as both market and monument: the same fishwives' calls, the same €3 wine at the stall, now under cleaner glass.",
     "m2-bridge":
@@ -41,6 +43,8 @@ export const stories: Record<Locale, Record<string, string>> = {
       "Norte Shopping sits on the metro line that stitches Porto's granite centre to the northern suburbs — a shopping mall as transfer point, not a destination. From Bolhão it's a short ride that locals use for errands; tonight it's the cleanest path to Brazilian fire.",
     "e2-fogo":
       "Fogo de Chão is Brazilian churrasco transplanted to Portugal: meat on skewers, rodízio rhythm, salad bar as ritual. The Norte Shopping branch keeps you on the metro axis back to Bolhão — dinner as spectacle without stranding you at Mar Shopping.",
+    "e2-cristal":
+      "The Palácio de Cristal gardens opened with the Crystal Palace exhibition hall in 1865 — Porto's answer to London's glass palace, later lost to fire and replaced, but the terraces and river views remain. Locals still walk the paths at golden hour: peacocks, lawns, Douro light through the trees.",
     "e2-virtudes":
       "Passeio and Jardim das Virtudes open the Miragaia cliff to the Douro — evening light painters chased before the kiosk beer. A pause, not a programme: roofs, river haze, then a few steps to the jazz rooftop.",
     "e2-mirajazz":
@@ -48,7 +52,7 @@ export const stories: Record<Locale, Record<string, string>> = {
   },
   de: {
     "m1-breakfast":
-      "Portos Frühstückskultur kam nie aus Hotelbuffets — sie wuchs aus Arbeitercafés an den Märkten, wo Bäcker früh für Fischer und Ladenbesitzer öffneten. Seitengassen-Spots wie dieser halten den Habitus: stille Höfe, ernster Kaffee, keine Show.",
+      "Portos Frühstückskultur kam nie aus Hotelbuffets — sie wuchs aus Arbeitercafés an den Märkten, wo Bäcker früh für Fischer und Ladenbesitzer öffneten. Specialty-Spots wie Eatery 119 halten den Habitus: ernster Kaffee, ein richtiger Teller, noch in der Seitenstraße statt auf dem Touristenplatz.",
     "m1-santa-catarina":
       "Die Rua de Santa Catarina wurde Ende des 19. Jahrhunderts zur Einkaufsachse Portos. Die Capela das Almas bekam 1929 ihre berühmten blauen Azulejos über einer älteren Kapelle; das Majestic öffnete 1921 als Belle-Époque-Salon für Literaten. Die Pérola do Bolhão verkauft seit über hundert Jahren Stockfisch und Gewürze hinter der Jugendstilfassade.",
     "m1-sao-bento":
@@ -58,9 +62,11 @@ export const stories: Record<Locale, Record<string, string>> = {
     "m1-sao-francisco":
       "Die gotische Kirche São Francisco wurde im 17.–18. Jahrhundert so stark vergoldet, dass Liberale sie später als dekadent verspotteten. Darunter liegen Franziskaner in den Katakomben; der Glasboden über dem Beinhaus ist die dunklere Pointe. Daneben steht der Palácio da Bolsa (1842), der Kaufmannspalast einer Handelsstadt.",
     "m1-lello":
-      "Die Livraria Lello öffnete 1906 als neo-gotisches Schmuckkästchen — später als Harry-Potter-Inspiration mythologisiert, was sie rettete und überfüllte. Die Rua das Flores war die Straße der Blumenhändler und Handwerker vom Fluss hinauf. Die Igreja do Carmo (1768) trägt eine der großen Azulejo-Wände; die Manifesto Library schreibt im selben Haus die Geschichte weiter, was gesagt und was zensiert wird.",
+      "Die Torre dos Clérigos (1763) war einst Portugals höchster Turm — Nicolau Nasonis barockes Wahrzeichen für eine Stadt aus Granit und Höhe. Die Livraria Lello öffnete 1906 als neo-gotisches Schmuckkästchen — später als Harry-Potter-Inspiration mythologisiert. Die Rua das Flores war die Straße der Blumenhändler; die Igreja do Carmo (1768) trägt eine der großen Azulejo-Wände.",
     "m1-lunch":
-      "Die Gassen hinter Clérigos und Flores waren immer dort, wo Locals aßen, während Touristen am Ufer blieben. Kleine Räume, Oktopus und Reis — das Porto-Mittagessen am Ende einer Vormittagsschleife. Pastéis de nata kamen aus Lissabonner Klosterküchen; Manteigaria machte die Gewohnheit lokal: Zucker, Zimt, dann heim zur Siesta.",
+      "Die Gassen hinter Clérigos und Flores waren immer dort, wo Locals aßen, während Touristen am Ufer blieben. Kleine Räume, Oktopus und Reis — das Porto-Mittagessen am Ende einer Vormittagsschleife.",
+    "m1-manteigaria":
+      "Pastéis de nata kamen aus Lissabonner Klosterküchen; Manteigaria machte die Gewohnheit lokal und sichtbar: Pudding im Schaufenster, Zucker, Zimt, dann heim zur Siesta. Die Santa Catarina ist die richtige Straße dafür — Gebäck als Satzzeichen, nicht als Pilgerfahrt.",
     "e1-metro":
       "Portos Metro ist jung (2002), aber Linie A folgt alter Logik: Granitzentrum an die Fischerküste anbinden. Matosinhos war nie nur Vorort — hier kam der Fang an. Die Metro macht das alte Küstenabendessen ohne Auto möglich.",
     "e1-beach":
@@ -70,7 +76,7 @@ export const stories: Record<Locale, Record<string, string>> = {
     "e1-gelado":
       "Eine portugiesische Nacht mit Eis zu schließen ist ein stilles Ritual — etwas Kaltes nach Salz und Grill, dann die Metro zurück. Bolhão um die Stunde fühlt sich wieder nach Viertel an, nicht nach Destination.",
     "m2-breakfast":
-      "Bolhão-Morgen folgen dem Marktrhythmus: Rollläden hoch, Fisch auf Eis, Kaffee vor dem Feilschen. Frühstück an der Rua da Alegria gibt es für genau diese Frühen.",
+      "Portugiesische Morgen starten oft in der Padaria, nicht am Brunch-Counter: Kaffee an der Bar, warme Bola oder Croissant, dann raus in den Tag. Ketten wie A Padaria Portuguesa halten den Habitus nah an der Metro — zuerst Trindade, dann Bolhão.",
     "m2-bolhao":
       "Der Mercado do Bolhão öffnete 1914 als zentraler Lebensmittelmarkt — Eisen, Stein, Portos Küche. Nach der Sanierung ist er Denkmal und Markt zugleich: dieselben Rufe, derselbe Wein für €3 am Stand.",
     "m2-bridge":
@@ -85,6 +91,8 @@ export const stories: Record<Locale, Record<string, string>> = {
       "Das Norte Shopping sitzt an der Metro, die Portos Granitzentrum an die nördlichen Vororte bindet — Einkaufszentrum als Umstieg, nicht als Ziel. Vom Bolhão ist es eine kurze Fahrt; heute der sauberste Weg zum brasilianischen Grill.",
     "e2-fogo":
       "Fogo de Chão ist brasilianisches Churrasco in Portugal: Fleisch am Spieß, Rodízio-Rhythmus, Salatbar als Ritual. Die Filiale im Norte Shopping hält euch auf der Metro-Achse zurück zum Bolhão — Dinner als Spektakel, ohne euch am Mar Shopping zu stranden.",
+    "e2-cristal":
+      "Die Gärten des Palácio de Cristal öffneten 1865 mit der Crystal-Palace-Ausstellungshalle — Portos Antwort auf Londons Glaspalast, später abgebrannt und ersetzt, aber Terrassen und Flussblick blieben. Locals gehen zur goldenen Stunde noch die Wege: Pfauen, Rasen, Douro-Licht durch die Bäume.",
     "e2-virtudes":
       "Passeio und Jardim das Virtudes öffnen die Miragaia-Klippe zum Douro — Abendlicht, das Maler jagten, lange vor dem Kiosk-Bier. Pause, kein Programm: Dächer, Flussschleier, dann wenige Schritte zum Jazz-Rooftop.",
     "e2-mirajazz":
@@ -92,7 +100,7 @@ export const stories: Record<Locale, Record<string, string>> = {
   },
   pt: {
     "m1-breakfast":
-      "O pequeno-almoço no Porto nunca foi buffet de hotel — nasceu dos cafés de trabalhadores junto aos mercados, onde os padeiros abriam cedo para pescadores e lojistas. Sítios em travessas como este mantêm o hábito: pátios quietos, café a sério, sem espetáculo.",
+      "O pequeno-almoço no Porto nunca foi buffet de hotel — nasceu dos cafés de trabalhadores junto aos mercados, onde os padeiros abriam cedo para pescadores e lojistas. Sítios de especialidade como o Eatery 119 mantêm o hábito: café a sério, um prato a sério, ainda numa rua lateral e não na praça turística.",
     "m1-santa-catarina":
       "A Rua de Santa Catarina tornou-se a artéria comercial do Porto no fim do século XIX. A Capela das Almas ganhou os azulejos azuis famosos em 1929; o Majestic abriu em 1921 como salão Belle Époque. A Pérola do Bolhão vende bacalhau e especiarias atrás da fachada Art Nouveau há mais de um século.",
     "m1-sao-bento":
@@ -102,9 +110,11 @@ export const stories: Record<Locale, Record<string, string>> = {
     "m1-sao-francisco":
       "A igreja gótica de São Francisco foi dourada nos séculos XVII–XVIII até brilhar quase tudo — tanto ouro que liberais do século XIX a acusaram de decadência. Por baixo, as catacumbas guardam frades; o chão de vidro sobre o ossuário é o twist mais sombrio. Ao lado, o Palácio da Bolsa (1842) foi o palácio dos mercadores.",
     "m1-lello":
-      "A Livraria Lello abriu em 1906 num estojo neogótico de madeira e vitrais — depois mitificada como inspiração de Harry Potter, o que a salvou e a encheu demais. A Rua das Flores foi a rua dos floristas e artesãos a subir do rio. A Igreja do Carmo (1768) tem uma das grandes paredes de azulejo; a Manifesto Library continua, no mesmo edifício, a história do que se diz e do que se cala.",
+      "A Torre dos Clérigos (1763) foi outrora a mais alta de Portugal — marco barroco de Nicolau Nasoni para uma cidade de granito e altura. A Livraria Lello abriu em 1906 num estojo neogótico — depois mitificada como inspiração de Harry Potter. A Rua das Flores foi a rua dos floristas; a Igreja do Carmo (1768) tem uma das grandes paredes de azulejo.",
     "m1-lunch":
-      "As ruelas atrás dos Clérigos e das Flores foram sempre onde os locais comiam enquanto os turistas ficavam na Ribeira. Salas pequenas, polvo e arroz — o almoço do Porto no fim de um circuito de manhã. Os pastéis de nata vieram dos conventos de Lisboa; a Manteigaria tornou o hábito local: açúcar, canela, depois casa e sesta.",
+      "As ruelas atrás dos Clérigos e das Flores foram sempre onde os locais comiam enquanto os turistas ficavam na Ribeira. Salas pequenas, polvo e arroz — o almoço do Porto no fim de um circuito de manhã.",
+    "m1-manteigaria":
+      "Os pastéis de nata vieram dos conventos de Lisboa; a Manteigaria tornou o hábito local e visível: creme na montra, açúcar, canela, depois casa e sesta. A Santa Catarina é a rua certa para esse regresso — pastelaria como pontuação, não peregrinação.",
     "e1-metro":
       "O metro do Porto é jovem (2002), mas a Linha A segue uma lógica antiga: ligar o centro de granito à costa de pesca. Matosinhos nunca foi só subúrbio — era onde chegava o peixe. O metro tornou o jantar à beira-mar possível sem carro.",
     "e1-beach":
@@ -114,7 +124,7 @@ export const stories: Record<Locale, Record<string, string>> = {
     "e1-gelado":
       "Fechar a noite portuguesa com gelado é um ritual quieto — algo frio depois do sal e da grelha, depois o metro de volta. O Bolhão a essa hora volta a ser bairro, não destino.",
     "m2-breakfast":
-      "As manhãs do Bolhão seguem o ritmo do mercado: portas a abrir, peixe no gelo, café antes da pechincha. Os cafés da Rua da Alegria existem para essa hora cedo.",
+      "As manhãs portuguesas começam muitas vezes na padaria, não no brunch: café ao balcão, uma bola ou croissant quente, depois para a rua. Cadeias como A Padaria Portuguesa mantêm o hábito junto ao metro — primeiro Trindade, depois Bolhão.",
     "m2-bolhao":
       "O Mercado do Bolhão abriu em 1914 como mercado central de alimentos — ferro, pedra, a cozinha da cidade. Depois da obra é monumento e mercado: os mesmos pregões, o mesmo vinho a €3 na banca.",
     "m2-bridge":
@@ -129,6 +139,8 @@ export const stories: Record<Locale, Record<string, string>> = {
       "O Norte Shopping assenta na linha de metro que liga o granito do centro aos subúrbios a norte — centro comercial como transferência, não destino. Do Bolhão é um salto curto; esta noite é o caminho limpo até ao fogo brasileiro.",
     "e2-fogo":
       "O Fogo de Chão é churrasco brasileiro em Portugal: carne no espeto, ritmo de rodízio, salad bar como ritual. A filial do Norte Shopping mantém-vos no eixo do metro de volta ao Bolhão — jantar-espetáculo sem ficar encalhados no Mar Shopping.",
+    "e2-cristal":
+      "Os jardins do Palácio de Cristal abriram com o pavilhão de exposição de 1865 — a resposta do Porto ao palácio de vidro de Londres, depois perdido e substituído, mas os terraços e a vista do rio ficaram. Os locais ainda passeiam à hora dourada: pavões, relvados, luz do Douro entre as árvores.",
     "e2-virtudes":
       "O Passeio e o Jardim das Virtudes abrem a falésia de Miragaia ao Douro — luz da noite que os pintores caçavam antes da cerveja do quiosque. Pausa, não programa: telhados, névoa do rio, depois poucos passos até ao rooftop de jazz.",
     "e2-mirajazz":

@@ -84,6 +84,25 @@ export function HomePage() {
               </li>
             );
           })}
+          <li>
+            <Link
+              to="/album"
+              className="album-card block p-5 text-left transition active:scale-[0.99] sm:p-6"
+            >
+              <p className="meta-mono text-white/70">
+                {t.album.overline}
+              </p>
+              <h2 className="display mt-2 text-2xl leading-tight text-white">
+                {t.album.title}
+              </h2>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-white/75">
+                {t.album.intro}
+              </p>
+              <p className="meta-mono mt-5 text-white">
+                {t.ui.openAlbum}
+              </p>
+            </Link>
+          </li>
         </ul>
       </main>
 

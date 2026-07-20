@@ -23,6 +23,8 @@ export const en: Dictionary = {
     overline: "For Miriam & Niels",
     title: "Since when have Miriam and Niels been together?",
     prompt: "Enter the date — then your Porto plan opens.",
+    claraLabel: "For Clara",
+    claraPrompt: "Your birthday — day · month · year.",
     day: "Day",
     month: "Month",
     year: "Year",
@@ -71,19 +73,39 @@ export const en: Dictionary = {
     iosAddHome:
       "Add to Home Screen: Share → “Add to Home Screen” — then Porto works like an app, even offline.",
     iosAddHomeDismiss: "Got it",
+    photosLabel: "Photos",
+    addPhotos: "Add photos",
+    photoSaving: "Saving…",
+    photosEmptyStop: "No photos at this stop yet.",
+    deletePhoto: "Delete",
+    photoError: "Couldn’t save the photo.",
+    openAlbum: "Open photo book →",
+  },
+  album: {
+    overline: "After the trip",
+    title: "Our photo book",
+    intro:
+      "Every place by day and time — open a chapter, add photos, flip through.",
+    openBook: "Open the book →",
+    closeBook: "Close",
+    contents: "Contents",
+    foldOut: "Open",
+    foldIn: "Close",
+    placeOf: "Place {current} of {total}",
+    photoCount: "{n} photos",
   },
   days: {
     "1": {
       navLabel: "Monday",
       title: "Monday — Old Town & Matosinhos",
       blurb:
-        "Morning: one loop through the old town ending at lunch. Evening: beach and fish in Matosinhos.",
+        "Morning: old-town loop with Clérigos and pastéis, then lunch. Evening: beach and fish in Matosinhos.",
     },
     "2": {
       navLabel: "Tuesday",
       title: "Tuesday — Gaia & rodízio",
       blurb:
-        "Morning: Bolhão, the bridge and port wine in Gaia. Evening: Fogo de Chão, Virtudes, Mirajazz.",
+        "Morning: bakery, Bolhão, the bridge and port wine in Gaia. Evening: Fogo, Cristal gardens, Virtudes, Mirajazz.",
     },
   },
   sections: {
@@ -91,14 +113,14 @@ export const en: Dictionary = {
       navLabel: "Morning",
       title: "Morning — Old Town Core",
       intro:
-        "One line, no backtracking: down through Santa Catarina from the flat, past the Sé and hidden viewpoints to the river, through the gilded church, and up Rua das Flores to Lello. Ends at lunch.",
-      tip: "BOOK LELLO FOR THE LATEST MORNING SLOT · ~4.5 KM",
+        "One line, no backtracking: breakfast on the way down Santa Catarina, past the Sé and hidden viewpoints to the river, through the gilded church, up Rua das Flores to Clérigos and Lello, lunch nearby, then pastéis at Manteigaria on the walk home.",
+      tip: "BOOK LELLO FOR THE LATEST MORNING SLOT · CLÉRIGOS BEFORE OR AFTER · ~4.5 KM",
       stops: {
         "m1-breakfast": {
           title: "Breakfast — the start",
-          tag: "the grow",
-          body: "Three minutes from the flat, tucked into a quiet side alley (Travessa de Alferes Malheiro 83) — small courtyard, generous breakfast plates, genuinely good cappuccino, no queue for photos. Open from 8:30am. Alternative right on the way down: Eatery 119 (Rua de Rodrigues Sampaio, from 9am) for excellent Turkish eggs.",
-          meta: "3 min from the flat — then straight into Santa Catarina",
+          tag: "Eatery 119",
+          body: "On Rua de Rodrigues Sampaio, right on the way down toward Santa Catarina — specialty coffee, excellent Turkish eggs, warm green-tiled room. Open from 9am. Quieter alternative three minutes from the flat: the grow (Travessa de Alferes Malheiro 83, from 8:30am) if you want a courtyard and no brunch crowd.",
+          meta: "On the route down — then straight into Santa Catarina",
         },
         "m1-santa-catarina": {
           title:
@@ -126,16 +148,22 @@ export const en: Dictionary = {
           meta: "3 min from the riverfront",
         },
         "m1-lello": {
-          title: "Rua das Flores → Livraria Lello + Manifesto Library + Carmo",
+          title: "Rua das Flores → Torre dos Clérigos → Lello + Carmo",
           tag: "For both of you",
-          body: "Rua das Flores takes you uphill past ceramics, paper and workshop stores. At the top, Lello — and inside the new Siza-designed auditorium, the Manifesto Library: Dua Lipa's Service95 book club permanently displays 100 banned and censored books (Power, Control, Voice, Memory). Book tickets online in advance; the fee is credited against a book purchase. Next door, the azulejo facade of Igreja do Carmo. On Saturdays, 3 min further: Mercado Porto Belo, a small vintage, vinyl and book market on Praça Carlos Alberto.",
-          meta: "Flores starts at the riverfront, Lello is 6 min further",
+          body: "Rua das Flores takes you uphill past ceramics, paper and workshop stores. At the top: Torre dos Clérigos — climb the baroque tower for the city panorama (about 20–30 min; do it before Lello if your ticket is later, after if you have an early slot). Then Lello — and inside the new Siza-designed auditorium, the Manifesto Library: Dua Lipa's Service95 book club permanently displays 100 banned and censored books. Book tickets online in advance; the fee is credited against a book purchase. Next door, the azulejo facade of Igreja do Carmo. On Saturdays, 3 min further: Mercado Porto Belo on Praça Carlos Alberto.",
+          meta: "Flores from the river · Clérigos & Lello share the same square",
         },
         "m1-lunch": {
           title: "Lunch",
           tag: "Jardim do Trás",
-          body: "Three minutes from Lello, hidden down an alley on Rua de Trás 224 — tiny place run by two people who actually care. Octopus carpaccio, tiger shrimp risotto, Argentine steak, every plate feels thought out. Real restaurant, not a snack counter. Closed Tuesdays. If Tuesday is your day: The Door (Rua das Taipas, nearby, 4.8 stars, small fusion menu) or Cozinha dos Lóios (Rua dos Caldeireiros, mid-route, octopus and meat, always open). On the way back, pastéis de nata at Manteigaria. Then 15 min home. Nap.",
+          body: "Three minutes from Lello, hidden down an alley on Rua de Trás 224 — tiny place run by two people who actually care. Octopus carpaccio, tiger shrimp risotto, Argentine steak, every plate feels thought out. Real restaurant, not a snack counter. Closed Tuesdays. If Tuesday is your day: The Door (Rua das Taipas, nearby) or Cozinha dos Lóios (Rua dos Caldeireiros, mid-route). Next stop: Manteigaria for pastéis on the walk home.",
           meta: "Craft, not casual",
+        },
+        "m1-manteigaria": {
+          title: "Pastéis de nata — Manteigaria",
+          tag: "Warm from the oven",
+          body: "On Rua de Santa Catarina on the way home — pastéis de nata baked in the window, sugar and cinnamon on top, still warm. Grab a couple to go, then about 10–15 min back to the flat. Nap before Matosinhos.",
+          meta: "On the walk home from lunch · then siesta",
         },
       },
     },
@@ -181,9 +209,9 @@ export const en: Dictionary = {
       stops: {
         "m2-breakfast": {
           title: "Breakfast — the start",
-          tag: "Breakfast Lovers Bolhão",
-          body: "Five minutes from the flat on Rua da Alegria 87 — a small, carefully run breakfast spot with mini portions so you can try a bit of everything, open from 8am. If you'd rather just grab coffee and eat at the market: My Coffee Porto at Bolhão (Fernandes Tomás 646) is right on the way.",
-          meta: "5 min from the flat, the market is around the corner",
+          tag: "A Padaria Portuguesa · Trindade",
+          body: "Near Trindade metro — classic Portuguese bakery for a quick morning: coffee, bolas, croissants, no sit-down brunch theatre. Opens early; perfect before Bolhão. If you want a plated breakfast instead: Breakfast Lovers on Rua da Alegria 87 (from 8am), five minutes from the flat.",
+          meta: "5–8 min from the flat · then Bolhão is around the corner",
         },
         "m2-bolhao": {
           title: "Mercado do Bolhão",
@@ -221,8 +249,8 @@ export const en: Dictionary = {
       navLabel: "Evening",
       title: "Evening — Rodízio & jazz on the Douro",
       intro:
-        "A fixed plan: Brazilian rodízio at Fogo de Chão (Norte Shopping), back toward the flat, a short Douro pause at Passeio das Virtudes, then Mirajazz rooftop to close.",
-      tip: "BOOK FOGO · QUICK-CHECK MIRAJAZZ LIVE SET",
+        "A fixed plan: Brazilian rodízio at Fogo de Chão (Norte Shopping), metro back, golden hour in the Jardins do Palácio de Cristal, downhill to Passeio das Virtudes, then Mirajazz rooftop to close.",
+      tip: "BOOK FOGO · CRISTAL AT GOLDEN HOUR · CHECK MIRAJAZZ LIVE SET",
       stops: {
         "e2-metro": {
           title: "Metro to Norte Shopping",
@@ -236,10 +264,16 @@ export const en: Dictionary = {
           body: "Brazilian rodízio: meat from the spit, salad bar, no decision fatigue. The Norte Shopping branch is the right one — next to the metro, easy ride back into town. Book ahead.",
           meta: "Right at the mall · book ahead",
         },
+        "e2-cristal": {
+          title: "Jardins do Palácio de Cristal",
+          tag: "Golden hour",
+          body: "Metro back toward the flat, then west to the Crystal Palace gardens — wide paths, peacocks, Douro views through the trees. Thirty to forty-five minutes at golden hour is enough; no need to do the whole park. Then downhill toward Virtudes (~10–15 min).",
+          meta: "After Fogo · before Virtudes & Mirajazz",
+        },
         "e2-virtudes": {
           title: "Passeio das Virtudes",
           tag: "Short Douro stop",
-          body: "Metro back to Bolhão, then 15–20 min downhill into Miragaia. Pause at Jardim / Passeio das Virtudes — evening light on the Douro, locals, no extra programme. Optional next door: Miradouro da Vitória.",
+          body: "Downhill from Cristal into Miragaia. Pause at Jardim / Passeio das Virtudes — evening light on the Douro, locals, no extra programme. Optional next door: Miradouro da Vitória.",
           meta: "On the way to Mirajazz",
         },
         "e2-mirajazz": {

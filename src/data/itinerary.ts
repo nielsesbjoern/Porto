@@ -100,9 +100,9 @@ export const sectionsBase: SectionBase[] = [
       {
         id: "m1-breakfast",
         icon: "☕",
-        lat: 41.15015,
-        lng: -8.6084,
-        mapsQuery: "the grow, Travessa de Alferes Malheiro 83, Porto",
+        lat: 41.14885,
+        lng: -8.60915,
+        mapsQuery: "Eatery 119, Rua de Rodrigues Sampaio, Porto",
       },
       {
         id: "m1-santa-catarina",
@@ -135,9 +135,9 @@ export const sectionsBase: SectionBase[] = [
       {
         id: "m1-lello",
         icon: "📚",
-        lat: 41.14685,
-        lng: -8.6147,
-        mapsQuery: "Livraria Lello, Porto",
+        lat: 41.1457,
+        lng: -8.6146,
+        mapsQuery: "Torre dos Clérigos, Porto",
       },
       {
         id: "m1-lunch",
@@ -145,6 +145,13 @@ export const sectionsBase: SectionBase[] = [
         lat: 41.14755,
         lng: -8.6154,
         mapsQuery: "Jardim do Trás, Rua de Trás 224, Porto",
+      },
+      {
+        id: "m1-manteigaria",
+        icon: "🥧",
+        lat: 41.14785,
+        lng: -8.60635,
+        mapsQuery: "Manteigaria, Rua de Santa Catarina, Porto",
       },
     ],
   },
@@ -189,9 +196,9 @@ export const sectionsBase: SectionBase[] = [
       {
         id: "m2-breakfast",
         icon: "☕",
-        lat: 41.14935,
-        lng: -8.6049,
-        mapsQuery: "Breakfast Lovers, Rua da Alegria 87, Porto",
+        lat: 41.15115,
+        lng: -8.60945,
+        mapsQuery: "A Padaria Portuguesa Trindade, Porto",
       },
       {
         id: "m2-bolhao",
@@ -247,6 +254,13 @@ export const sectionsBase: SectionBase[] = [
         lat: 41.1839,
         lng: -8.6548,
         mapsQuery: "Fogo de Chão Norte Shopping, Rua Sara Afonso, Porto",
+      },
+      {
+        id: "e2-cristal",
+        icon: "🌳",
+        lat: 41.1482,
+        lng: -8.6255,
+        mapsQuery: "Jardins do Palácio de Cristal, Porto",
       },
       {
         id: "e2-virtudes",

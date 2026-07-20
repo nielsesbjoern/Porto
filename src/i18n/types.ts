@@ -37,6 +37,8 @@ export interface Dictionary {
     overline: string;
     title: string;
     prompt: string;
+    claraLabel: string;
+    claraPrompt: string;
     day: string;
     month: string;
     year: string;
@@ -84,6 +86,25 @@ export interface Dictionary {
     offlineReady: string;
     iosAddHome: string;
     iosAddHomeDismiss: string;
+    photosLabel: string;
+    addPhotos: string;
+    photoSaving: string;
+    photosEmptyStop: string;
+    deletePhoto: string;
+    photoError: string;
+    openAlbum: string;
+  };
+  album: {
+    overline: string;
+    title: string;
+    intro: string;
+    openBook: string;
+    closeBook: string;
+    contents: string;
+    foldOut: string;
+    foldIn: string;
+    placeOf: string;
+    photoCount: string;
   };
   days: Record<
     "1" | "2",

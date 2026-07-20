@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { DateGate } from "./components/DateGate";
 import { OfflineBar } from "./components/OfflineBar";
+import { AlbumPage } from "./pages/AlbumPage";
 import { DayPage } from "./pages/DayPage";
 import { HomePage } from "./pages/HomePage";
 import { isUnlocked } from "./utils/unlock";
@@ -19,6 +20,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/album" element={<AlbumPage />} />
         <Route path="/day/:dayId" element={<DayPage />} />
         <Route path="/day/:dayId/:slot" element={<DayPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
