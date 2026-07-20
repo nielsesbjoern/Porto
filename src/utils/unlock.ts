@@ -3,8 +3,8 @@ export const UNLOCK_STORAGE_KEY = "andrade-schade-porto:unlocked";
 /** Anniversary — day they got together (28 June 2025). */
 export const ANNIVERSARY = { day: 28, month: 6, year: 2025 } as const;
 
-/** Clara’s birthday — unlock via /clara only (25 December 2006). */
-export const CLARA_BIRTHDAY = { day: 25, month: 12, year: 2006 } as const;
+/** Clara’s birthday — unlock via /clara only (27 December 2006). */
+export const CLARA_BIRTHDAY = { day: 27, month: 12, year: 2006 } as const;
 
 export function isUnlocked(): boolean {
   try {
