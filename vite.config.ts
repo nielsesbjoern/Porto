@@ -17,6 +17,8 @@ export default defineConfig({
         "apple-touch-icon.png",
         "icons.svg",
         "avatars/*.png",
+        "avatars/*.jpg",
+        "avatars/clara-squat/*.jpg",
         "icons/*.png",
       ],
       manifest: {
