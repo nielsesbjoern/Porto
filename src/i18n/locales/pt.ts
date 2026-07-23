@@ -17,7 +17,7 @@ export const pt: Dictionary = {
     closing:
       "Dois dias, planos fixos — manhã, sesta, noite.",
     weekdayNote:
-      "Verificação de dias: Bolhão fechado ao domingo, Mercado Porto Belo só aos sábados, Lage Senhor do Padrão fechado à segunda e ao domingo. Reservem o Fogo; confirmem o horário do Mirajazz. Se um dos dias cair a domingo, reorganizem.",
+      "Seg/ter encaixam: Jardim do Trás aberto à segunda (fecha à terça), Lage Senhor do Padrão aberto à terça (fecha seg e dom). Bolhão fechado ao domingo. Reservem o Fogo cedo (~18h) — Cristal fecha às 21h no verão, Mirajazz até ~22h.",
     signOff: "Bom porto.",
   },
   gate: {
@@ -100,15 +100,15 @@ export const pt: Dictionary = {
   days: {
     "1": {
       navLabel: "Segunda",
-      title: "Segunda — Centro histórico & Matosinhos",
+      title: "Segunda — Centro histórico & rodízio",
       blurb:
-        "Manhã: circuito pelo centro com Clérigos e pastéis, depois almoço. Noite: praia e peixe em Matosinhos.",
+        "Manhã: circuito pelo centro com Clérigos e pastéis, depois almoço. Noite: Fogo, jardins do Cristal, Virtudes, Mirajazz.",
     },
     "2": {
       navLabel: "Terça",
-      title: "Terça — Gaia & rodízio",
+      title: "Terça — Gaia & Matosinhos",
       blurb:
-        "Manhã: padaria, Bolhão, ponte e vinho do Porto em Gaia. Noite: Fogo, jardins do Cristal, Virtudes, Mirajazz.",
+        "Manhã: padaria, Bolhão, ponte e vinho do Porto em Gaia. Noite: praia e peixe em Matosinhos.",
     },
   },
   sections: {
@@ -165,7 +165,7 @@ export const pt: Dictionary = {
         "m1-manteigaria": {
           title: "Pastéis de nata — Manteigaria",
           tag: "Quentes do forno",
-          body: "Na Rua de Santa Catarina a caminho de casa — pastéis de nata assados na montra, açúcar e canela por cima, ainda quentes. Levem uns para levar, depois cerca de 10–15 min até ao apartamento. Sesta antes de Matosinhos.",
+          body: "Na Rua de Santa Catarina a caminho de casa — pastéis de nata assados na montra, açúcar e canela por cima, ainda quentes. Levem uns para levar, depois cerca de 10–15 min até ao apartamento. Sesta antes do rodízio.",
           meta: "No regresso do almoço · depois sesta",
         },
       },
@@ -174,7 +174,7 @@ export const pt: Dictionary = {
       navLabel: "Noite",
       title: "Noite — Matosinhos: Praia & Peixe",
       intro:
-        "Um plano fixo para esta noite, não um menu de opções — na primeira noite estão mais frescos, por isso é a noite da viagem extra até à costa.",
+        "Um plano fixo para esta noite, não um menu de opções — a viagem extra até à costa: passeio na praia e peixe grelhado em Matosinhos.",
       tip: "SAIAM CEDO — ANTES DE FORMAR FILA NO LAGE SENHOR DO PADRÃO · FECHADO SEG & DOM",
       stops: {
         "e1-metro": {
@@ -243,7 +243,7 @@ export const pt: Dictionary = {
         "m2-guindalense": {
           title: "Guindalense — cerveja debaixo da ponte, depois casa",
           tag: "Locais, não turistas",
-          body: "De volta pelo tabuleiro inferior, e mesmo ao pé da ponte no lado do Porto: o quiosque do clube de futebol Guindalense. A cerveja mais barata da cidade, a melhor vista, só locais — uma paragem curta antes do caminho para casa. Depois 15–20 min até ao apartamento. Sesta.",
+          body: "De volta pelo tabuleiro inferior, e mesmo ao pé da ponte no lado do Porto: o quiosque do clube de futebol Guindalense. A cerveja mais barata da cidade, a melhor vista, só locais — uma paragem curta antes do caminho para casa. Depois 15–20 min até ao apartamento. Sesta antes de Matosinhos.",
           meta: "No caminho de volta pela ponte",
         },
       },
@@ -253,7 +253,7 @@ export const pt: Dictionary = {
       title: "Noite — Rodízio & jazz no Douro",
       intro:
         "Plano fixo: rodízio brasileiro no Fogo de Chão (Norte Shopping), metro de volta, hora dourada nos Jardins do Palácio de Cristal, a descer até ao Passeio das Virtudes, e fechar no rooftop do Mirajazz.",
-      tip: "RESERVEM O FOGO · CRISTAL À HORA DOURADA · CONFIRMEM O LIVE DO MIRAJAZZ",
+      tip: "FOGO CEDO (~18H) · CRISTAL ANTES DAS 21H (VERÃO) · MIRAJAZZ ATÉ ~22H",
       stops: {
         "e2-metro": {
           title: "Metro até ao Norte Shopping",
@@ -282,7 +282,7 @@ export const pt: Dictionary = {
         "e2-mirajazz": {
           title: "Mirajazz",
           tag: "Rooftop · jazz",
-          body: "Escadas do Caminho Novo 11 — rooftop com vista para o Douro, jazz, vinhos portugueses e petiscos. O fecho certo depois do rodízio: sem segundo jantar, sem bar crawl. Confirmem live e horário; muitas vezes fecha cedo.",
+          body: "Escadas do Caminho Novo 11 — rooftop com vista para o Douro, jazz, vinhos portugueses e petiscos. O fecho certo depois do rodízio: sem segundo jantar, sem bar crawl. Oficialmente até ~22h; confirmem o live.",
           meta: "A minutos das Virtudes · depois casa",
         },
       },

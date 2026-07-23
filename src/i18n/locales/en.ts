@@ -16,7 +16,7 @@ export const en: Dictionary = {
     startCta: "Open Monday →",
     closing: "Two days, fixed plans — morning, nap, evening.",
     weekdayNote:
-      "Weekday check: Bolhão closed Sundays, Mercado Porto Belo only Saturdays, Lage Senhor do Padrão closed Mondays and Sundays. Book Fogo; check Mirajazz hours. If one of your days lands on a Sunday, reshuffle.",
+      "Mon/Tue fit: Jardim do Trás open Monday (closed Tuesday), Lage Senhor do Padrão open Tuesday (closed Mon & Sun). Bolhão closed Sundays. Book Fogo early (~6pm) — Cristal closes at 9pm in summer, Mirajazz until ~10pm.",
     signOff: "Bom porto.",
   },
   gate: {
@@ -99,15 +99,15 @@ export const en: Dictionary = {
   days: {
     "1": {
       navLabel: "Monday",
-      title: "Monday — Old Town & Matosinhos",
+      title: "Monday — Old Town & rodízio",
       blurb:
-        "Morning: old-town loop with Clérigos and pastéis, then lunch. Evening: beach and fish in Matosinhos.",
+        "Morning: old-town loop with Clérigos and pastéis, then lunch. Evening: Fogo, Cristal gardens, Virtudes, Mirajazz.",
     },
     "2": {
       navLabel: "Tuesday",
-      title: "Tuesday — Gaia & rodízio",
+      title: "Tuesday — Gaia & Matosinhos",
       blurb:
-        "Morning: bakery, Bolhão, the bridge and port wine in Gaia. Evening: Fogo, Cristal gardens, Virtudes, Mirajazz.",
+        "Morning: bakery, Bolhão, the bridge and port wine in Gaia. Evening: beach and fish in Matosinhos.",
     },
   },
   sections: {
@@ -164,7 +164,7 @@ export const en: Dictionary = {
         "m1-manteigaria": {
           title: "Pastéis de nata — Manteigaria",
           tag: "Warm from the oven",
-          body: "On Rua de Santa Catarina on the way home — pastéis de nata baked in the window, sugar and cinnamon on top, still warm. Grab a couple to go, then about 10–15 min back to the flat. Nap before Matosinhos.",
+          body: "On Rua de Santa Catarina on the way home — pastéis de nata baked in the window, sugar and cinnamon on top, still warm. Grab a couple to go, then about 10–15 min back to the flat. Nap before the rodízio.",
           meta: "On the walk home from lunch · then siesta",
         },
       },
@@ -173,7 +173,7 @@ export const en: Dictionary = {
       navLabel: "Evening",
       title: "Evening — Matosinhos: Beach & Fish",
       intro:
-        "A fixed plan for tonight, not a menu of options — you're freshest on evening one, so this is the night for the extra trip out to the coast.",
+        "A fixed plan for tonight, not a menu of options — the extra trip out to the coast: beach walk and grilled fish in Matosinhos.",
       tip: "GO EARLY — BEFORE THE LAGE SENHOR DO PADRÃO QUEUE FORMS · CLOSED MON & SUN",
       stops: {
         "e1-metro": {
@@ -242,7 +242,7 @@ export const en: Dictionary = {
         "m2-guindalense": {
           title: "Guindalense — beer under the bridge, then home",
           tag: "Locals, not tourists",
-          body: "Back over the lower deck, and right at the foot of the bridge on the Porto side: the kiosk of football club Guindalense. Cheapest beer in the city, best view, locals only — a short stop before the walk home. Then 15–20 min back to the flat. Nap.",
+          body: "Back over the lower deck, and right at the foot of the bridge on the Porto side: the kiosk of football club Guindalense. Cheapest beer in the city, best view, locals only — a short stop before the walk home. Then 15–20 min back to the flat. Nap before Matosinhos.",
           meta: "On the way back over the bridge",
         },
       },
@@ -252,7 +252,7 @@ export const en: Dictionary = {
       title: "Evening — Rodízio & jazz on the Douro",
       intro:
         "A fixed plan: Brazilian rodízio at Fogo de Chão (Norte Shopping), metro back, golden hour in the Jardins do Palácio de Cristal, downhill to Passeio das Virtudes, then Mirajazz rooftop to close.",
-      tip: "BOOK FOGO · CRISTAL AT GOLDEN HOUR · CHECK MIRAJAZZ LIVE SET",
+      tip: "BOOK FOGO EARLY (~6PM) · CRISTAL BEFORE 9PM (SUMMER) · MIRAJAZZ UNTIL ~10PM",
       stops: {
         "e2-metro": {
           title: "Metro to Norte Shopping",
@@ -281,7 +281,7 @@ export const en: Dictionary = {
         "e2-mirajazz": {
           title: "Mirajazz",
           tag: "Rooftop · jazz",
-          body: "Escadas do Caminho Novo 11 — rooftop over the Douro, jazz, Portuguese wines and petiscos. The right close after rodízio: no second dinner, no bar crawl. Check live set and hours; often closes early.",
+          body: "Escadas do Caminho Novo 11 — rooftop over the Douro, jazz, Portuguese wines and petiscos. The right close after rodízio: no second dinner, no bar crawl. Officially until ~10pm; check the live set.",
           meta: "A few minutes from Virtudes · then home",
         },
       },

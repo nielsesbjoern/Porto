@@ -55,14 +55,14 @@ export const BASE = {
 
 export const sectionOrder: SectionId[] = [
   "morning1",
-  "evening1",
-  "morning2",
   "evening2",
+  "morning2",
+  "evening1",
 ];
 
 export const daysBase: DayBase[] = [
-  { id: "1", morning: "morning1", evening: "evening1" },
-  { id: "2", morning: "morning2", evening: "evening2" },
+  { id: "1", morning: "morning1", evening: "evening2" },
+  { id: "2", morning: "morning2", evening: "evening1" },
 ];
 
 export function getDayBase(id: DayId): DayBase {
@@ -224,9 +224,9 @@ export const sectionsBase: SectionBase[] = [
       {
         id: "m2-lunch",
         icon: "🍽️",
-        lat: 41.13845,
-        lng: -8.6142,
-        mapsQuery: "Dragon Palace, Cais de Gaia",
+        lat: 41.13718,
+        lng: -8.6196,
+        mapsQuery: "Dragon Palace, Av. de Ramos Pinto 650, Vila Nova de Gaia",
       },
       {
         id: "m2-guindalense",
